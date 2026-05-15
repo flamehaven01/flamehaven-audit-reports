@@ -162,6 +162,27 @@ This is why the current report now surfaces both:
 
 That is a more defensible interpretation than the earlier behavior, which risked treating compliance-adjacent wording as a stronger positive signal than it deserved.
 
+For context, a HIPAA-oriented operational claim normally invites review of at least the following:
+
+- Business Associate Agreement expectations before PHI handling
+- administrative safeguards such as risk analysis, workforce training, and contingency planning
+- physical safeguards for devices and workstations
+- technical safeguards such as access controls, audit controls, integrity controls, and transmission security
+- breach-notification readiness under 45 CFR Part 164, Subpart D
+
+The current report does **not** say those controls are absent in deployment. It says the reviewed repository sources do not surface enough evidence to treat the README phrase as grounded governance proof.
+
+That distinction matters because the downside of over-reading a README compliance claim is not abstract. Under the 2025 HHS inflation-adjusted civil monetary penalty schedule, HIPAA violations can scale as follows:
+
+| Tier | Per Violation | Annual Maximum |
+|---|---:|---:|
+| No knowledge | $141 | $35,581 |
+| Reasonable cause | $1,424 | $71,162 |
+| Willful neglect, corrected | $14,232 | $355,808 |
+| Willful neglect, not corrected | $71,162 | $2,134,831 |
+
+The narrow takeaway is not “this repository is legally noncompliant.” The narrower and more defensible takeaway is that a compliance-adjacent README claim should not be operationalized without independent verification of controls, contracts, deployment boundaries, and incident-handling procedures.
+
 ---
 
 ## Regulatory Traceability
