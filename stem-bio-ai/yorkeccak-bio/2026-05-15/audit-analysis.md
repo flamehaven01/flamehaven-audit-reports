@@ -7,10 +7,6 @@
 **Execution Mode:** LOCAL_ANALYSIS  
 **Audit Expires:** 2026-06-29 (45-day freshness window)
 
-Related context from earlier audit writing:
-- OpenMythOS v0.5.0 code review: https://flamehaven.space/writing/openmythos-v050-code-review---audit-report/
-- Bio AI Repository Audit 2026: https://flamehaven.space/writing/bio-ai-repository-audit-2026-a-technical-report-on-10-open-source-systems/
-
 ---
 
 ## Executive Summary
@@ -176,10 +172,10 @@ That distinction matters because the downside of over-reading a README complianc
 
 | Tier | Per Violation | Annual Maximum |
 |---|---:|---:|
-| No knowledge | $141 | $35,581 |
-| Reasonable cause | $1,424 | $71,162 |
-| Willful neglect, corrected | $14,232 | $355,808 |
-| Willful neglect, not corrected | $71,162 | $2,134,831 |
+| No knowledge | $137 | $27,481 |
+| Reasonable cause | $1,379 | $137,897 |
+| Willful neglect, corrected | $13,785 | $68,928 |
+| Willful neglect, not corrected | $27,570 | $2,190,294 |
 
 The narrow takeaway is not “this repository is legally noncompliant.” The narrower and more defensible takeaway is that a compliance-adjacent README claim should not be operationalized without independent verification of controls, contracts, deployment boundaries, and incident-handling procedures.
 
