@@ -8,6 +8,7 @@
 Files:
 - [Interactive HTML report](./report.html)
 - [Markdown report](./report.md)
+- [Analyst write-up](./audit-analysis.md)
 - [JSON report](./report.json)
 - [Explain trace](./explain.txt)
 - [PDF report](./report.pdf)
