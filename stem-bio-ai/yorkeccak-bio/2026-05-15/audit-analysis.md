@@ -199,6 +199,8 @@ This is the right use of traceability. It helps reviewers orient the evidence. I
 
 ## AIRI Coverage
 
+Here, **AIRI** refers to the **AI Risk Repository / AI risk vocabulary layer** used by STEM-BIO-AI to connect local detector findings to a broader set of named AI-risk categories. It is not a separate scoring engine and it is not a truth layer. It is a bounded mapping layer that helps describe what kind of risk territory a local finding may belong to when detector-to-risk mappings exist.
+
 The most important difference from older outputs is that AIRI is no longer `0/31`.
 
 Current result:
