@@ -199,7 +199,14 @@ This is the right use of traceability. It helps reviewers orient the evidence. I
 
 ## AIRI Coverage
 
-Here, **AIRI** refers to the **AI Risk Repository / AI risk vocabulary layer** used by STEM-BIO-AI to connect local detector findings to a broader set of named AI-risk categories. It is not a separate scoring engine and it is not a truth layer. It is a bounded mapping layer that helps describe what kind of risk territory a local finding may belong to when detector-to-risk mappings exist.
+Here, **AIRI** refers to the **AI Risk Repository** from the MIT AI Risk Initiative: https://airisk.mit.edu/
+
+The AI Risk Repository has three core parts:
+- the **AI Risk Database**, which captures 1700+ risks extracted from 74 existing AI-risk frameworks and classifications,
+- the **Causal Taxonomy of AI Risks**, which classifies how, when, and why these risks occur,
+- the **Domain Taxonomy of AI Risks**, which classifies risks into 7 domains and 24 subdomains, such as false or misleading information.
+
+In STEM-BIO-AI, AIRI is used as a **bounded risk-vocabulary layer** that connects local detector findings to broader named AI-risk categories when detector-to-risk mappings exist. It is not a separate scoring engine and it is not a truth layer.
 
 The most important difference from older outputs is that AIRI is no longer `0/31`.
 
