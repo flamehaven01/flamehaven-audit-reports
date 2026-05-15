@@ -25,7 +25,7 @@
 ## Audit Freshness
 
 **Review After:** **45 days**
-**Expires On:** `2026-06-28`
+**Expires On:** `2026-06-29`
 **Change-triggered re-audit recommended now:** `False`
 **Current re-audit reasons:** `none`
 **Trigger examples:** `git_commit_changed, readme_or_docs_claim_surface_changed, dependency_manifest_changed, dataset_or_model_reference_changed`
@@ -62,19 +62,24 @@ Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_p
 
 ## AIRI Coverage
 
-**Covered Risks:** **0 / 31**
-**Coverage Rate:** `0.000`
+**Covered Risks:** **8 / 32**
+**Coverage Rate:** `0.250`
 **Bundle Scope:** `curated_medical_clinical_subset`
 **Upstream Snapshot:** `2026-04-23`
+
+**Examples of Covered AIRI Risks**
+- `24.01.03` — Safe exploration problem with widely deployed AI assistants (covered by: C4_exception_handling_clinical_adjacent_paths)
+- `24.04.01` — Physical and Psychological Harms (covered by: C2_dependency_pinning)
+- `33.01.05` — Privacy and security (covered by: C2_dependency_pinning)
 
 **Known Gaps In Bundle**
 - `65.03.03` — Reidentification
 - `70.02.02` — Misinformation — hallucination of clinical knowledge
 ## Code Integrity
 - **C1_hardcoded_credentials:** PASS — No direct credential patterns detected by local CLI scan.
-- **C2_dependency_pinning:** PASS — Dependency manifest appears pinned or not present.
+- **C2_dependency_pinning:** WARN — External operational dependency signal surfaced in code-integrity lane.
 - **C3_dead_or_deprecated_patient_adjacent_paths:** PASS — No deprecated patient-adjacent metadata patterns detected.
-- **C4_exception_handling_clinical_adjacent_paths:** PASS — No executable fail-open exception handler detected.
+- **C4_exception_handling_clinical_adjacent_paths:** WARN — Unsupported legal/compliance claim surfaced in boundary-integrity lane.
 
 ## Bio Deterministic Diagnostics
 
@@ -90,6 +95,7 @@ Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_p
 - Self-asserted compliance or privacy-governance claim requires independent verification.
 - Legal, privacy, or compliance claim appears without supporting governance or security-grounding evidence in reviewed repository sources.
 - Core workflow appears materially dependent on named external service providers; local or self-host claims may overstate operational independence.
+- C2_dependency_pinning: WARN
 
 ## Stage 1 Evidence
 - **baseline:** 60 — Non-nascent README evidence baseline.

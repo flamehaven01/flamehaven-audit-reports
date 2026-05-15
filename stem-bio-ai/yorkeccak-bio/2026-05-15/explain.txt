@@ -848,11 +848,16 @@ Regulatory Traceability Assistant
 ========================================================================
 AIRI Coverage
 
-  covered_count                  0
-  detector_scope_total           31
-  coverage_rate                  0.0
+  covered_count                  8
+  detector_scope_total           32
+  coverage_rate                  0.25
   bundle_scope                   curated_medical_clinical_subset
   upstream_snapshot              2026-04-23
+
+  covered examples:
+    - 24.01.03 | Safe exploration problem with widely deployed AI assistants | covered_by=C4_exception_handling_clinical_adjacent_paths
+    - 24.04.01 | Physical and Psychological Harms | covered_by=C2_dependency_pinning
+    - 33.01.05 | Privacy and security | covered_by=C2_dependency_pinning
 
   known gaps in bundle:
     - 65.03.03 | Reidentification
@@ -862,7 +867,7 @@ AIRI Coverage
 Audit Freshness
 
   review_after_days               45
-  expires_on                      2026-06-28
+  expires_on                      2026-06-29
   freshness_basis                 clinical_adjacent_short_cycle
   change_triggered_reaudit_now    False
   change_triggered_reasons        none

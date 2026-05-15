@@ -1,7 +1,7 @@
 {
   "schema_version": "stem-ai-local-cli-result-v1.6",
   "stem_ai_version": "1.7.5",
-  "generated_at_local": "2026-05-14",
+  "generated_at_local": "2026-05-15",
   "execution_mode": "LOCAL_ANALYSIS",
   "target": {
     "name": "yorkeccak/bio",
@@ -201,9 +201,12 @@
       ]
     },
     "C2_dependency_pinning": {
-      "status": "PASS",
+      "status": "WARN",
       "evidence": [
-        "Dependency manifest appears pinned or not present."
+        "External operational dependency signal surfaced in code-integrity lane.",
+        ".env.example:24 VALYU_API_KEY=valyu_your_api_key_here",
+        ".env.example:38 DAYTONA_API_KEY=your_daytona_api_key_here",
+        "README.md:23 - **One Unified Search** - Powered by Valyu's specialized biomedical data API"
       ]
     },
     "C3_dead_or_deprecated_patient_adjacent_paths": {
@@ -213,9 +216,11 @@
       ]
     },
     "C4_exception_handling_clinical_adjacent_paths": {
-      "status": "PASS",
+      "status": "WARN",
       "evidence": [
-        "No executable fail-open exception handler detected."
+        "Unsupported legal/compliance claim surfaced in boundary-integrity lane.",
+        "README.md:262 - HIPAA-compliant architecture (when self-hosted)",
+        "Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary."
       ]
     }
   },
@@ -245,11 +250,98 @@
     "airi_attribution_note": "Derived from The AI Risk Repository V4_03. Original source remains MIT-licensed and must be attributed in README, docs, runtime artifacts, and local registry metadata.",
     "total_risks_in_registry": 1595,
     "total_risks_in_bundle": 184,
-    "total_risks_in_detector_scope": 31,
-    "detectors_triggered": [],
-    "covered_risks": [],
-    "covered_count": 0,
-    "coverage_rate": 0.0,
+    "total_risks_in_detector_scope": 32,
+    "detectors_triggered": [
+      "C2_dependency_pinning",
+      "C4_exception_handling_clinical_adjacent_paths",
+      "R2R_D5_single_external_service_dependency",
+      "S1_R2_unsupported_legal_or_compliance_claim"
+    ],
+    "covered_risks": [
+      {
+        "id": "24.01.03",
+        "title": "Safe exploration problem with widely deployed AI assistants",
+        "subdomain_id": "7.3",
+        "subdomain_label": "Lack of capability or robustness",
+        "causal_timing": "Post-deployment",
+        "covered_by": [
+          "C4_exception_handling_clinical_adjacent_paths"
+        ]
+      },
+      {
+        "id": "24.04.01",
+        "title": "Physical and Psychological Harms",
+        "subdomain_id": "5.1",
+        "subdomain_label": "Overreliance and unsafe use",
+        "causal_timing": "Post-deployment",
+        "covered_by": [
+          "C2_dependency_pinning"
+        ]
+      },
+      {
+        "id": "33.01.05",
+        "title": "Privacy and security",
+        "subdomain_id": "2.1",
+        "subdomain_label": "Compromise of privacy / PII leakage",
+        "causal_timing": "Other",
+        "covered_by": [
+          "C2_dependency_pinning"
+        ]
+      },
+      {
+        "id": "39.25.00",
+        "title": "Verifiability",
+        "subdomain_id": "7.4",
+        "subdomain_label": "Lack of transparency or interpretability",
+        "causal_timing": "Post-deployment",
+        "covered_by": [
+          "S1_R2_unsupported_legal_or_compliance_claim"
+        ]
+      },
+      {
+        "id": "60.02.01",
+        "title": "Reliability issues",
+        "subdomain_id": "7.3",
+        "subdomain_label": "Lack of capability or robustness",
+        "causal_timing": "Post-deployment",
+        "covered_by": [
+          "R2R_D5_single_external_service_dependency",
+          "C4_exception_handling_clinical_adjacent_paths"
+        ]
+      },
+      {
+        "id": "69.01.00",
+        "title": "False information",
+        "subdomain_id": "3.1",
+        "subdomain_label": "False or misleading information",
+        "causal_timing": "Other",
+        "covered_by": [
+          "S1_R2_unsupported_legal_or_compliance_claim"
+        ]
+      },
+      {
+        "id": "70.01.02",
+        "title": "Accidental harm",
+        "subdomain_id": "7.3",
+        "subdomain_label": "Lack of capability or robustness",
+        "causal_timing": "Post-deployment",
+        "covered_by": [
+          "C4_exception_handling_clinical_adjacent_paths"
+        ]
+      },
+      {
+        "id": "72.04.02",
+        "title": "Market Concentration and Infrastructure Dependencies:",
+        "subdomain_id": "6.1",
+        "subdomain_label": "",
+        "causal_timing": "Other",
+        "covered_by": [
+          "R2R_D5_single_external_service_dependency"
+        ]
+      }
+    ],
+    "covered_count": 8,
+    "coverage_rate": 0.25,
     "known_gaps": [
       {
         "id": "65.03.03",
@@ -2147,7 +2239,9 @@
     "Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary.",
     "Self-asserted compliance or privacy-governance claim requires independent verification.",
     "Legal, privacy, or compliance claim appears without supporting governance or security-grounding evidence in reviewed repository sources.",
-    "Core workflow appears materially dependent on named external service providers; local or self-host claims may overstate operational independence."
+    "Core workflow appears materially dependent on named external service providers; local or self-host claims may overstate operational independence.",
+    "C2_dependency_pinning: WARN",
+    "C4_exception_handling_clinical_adjacent_paths: WARN"
   ],
   "file_hashes_sha256": {
     "README.md": "199862D708D85AF0B126FD4129E5F134D6E9E804F6F8249F940F3DA16DC190AA"
@@ -2190,7 +2284,7 @@
   "audit_freshness": {
     "review_after_days": 45,
     "freshness_basis": "clinical_adjacent_short_cycle",
-    "expires_on": "2026-06-28",
+    "expires_on": "2026-06-29",
     "expired": false,
     "anchored_commit": "100a0bf7497e62ead024df34d8c2e00ae74b8d99",
     "hashes_available_for": [
