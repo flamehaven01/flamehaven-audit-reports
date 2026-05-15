@@ -1,0 +1,923 @@
+STEM BIO-AI Explain Report
+Target  : yorkeccak/bio
+Policy  : default [ca-policy-1.0; mirror_only; authoritative_release]
+Policy Mode: mirror-only in 1.7.5 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
+Score   : 48 / 100  (T1 Quarantine)
+Replic  : 30 / 100  (R1)
+========================================================================
+
+S1_readme_bio_terms  [DETECTED]  (37 findings)
+  [001]  README.md:2
+         finding_id: S1_readme_bio_terms:README.md:2:001
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/stargazers"><img src="https://img.shields.io/github/stars/yorkeccak/bio?style=flat&color=yellow" alt="GitHub Stars"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [002]  README.md:2
+         finding_id: S1_readme_bio_terms:README.md:2:002
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/stargazers"><img src="https://img.shields.io/github/stars/yorkeccak/bio?style=flat&color=yellow" alt="GitHub Stars"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [003]  README.md:3
+         finding_id: S1_readme_bio_terms:README.md:3:003
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yorkeccak/bio" alt="License"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [004]  README.md:3
+         finding_id: S1_readme_bio_terms:README.md:3:004
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yorkeccak/bio" alt="License"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [005]  README.md:4
+         finding_id: S1_readme_bio_terms:README.md:4:005
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/network/members"><img src="https://img.shields.io/github/forks/yorkeccak/bio?style=flat" alt="Forks"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [006]  README.md:4
+         finding_id: S1_readme_bio_terms:README.md:4:006
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/network/members"><img src="https://img.shields.io/github/forks/yorkeccak/bio?style=flat" alt="Forks"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [007]  README.md:5
+         finding_id: S1_readme_bio_terms:README.md:5:007
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/graphs/contributors"><img src="https://img.shields.io/github/contributors/yorkeccak/bio" alt="Contributors"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [008]  README.md:5
+         finding_id: S1_readme_bio_terms:README.md:5:008
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio/graphs/contributors"><img src="https://img.shields.io/github/contributors/yorkeccak/bio" alt="Contributors"></a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [009]  README.md:8
+         finding_id: S1_readme_bio_terms:README.md:8:009
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "# Bio"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [010]  README.md:10
+         finding_id: S1_readme_bio_terms:README.md:10:010
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "Try the hosted version [here](https://bio.valyu.ai) 🙌"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [011]  README.md:14
+         finding_id: S1_readme_bio_terms:README.md:14:011
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "> **Enterprise-grade biomedical research behind a chat interface** - Access PubMed, clinical trials, FDA drug labels, and run complex Python analyses through natural language. P..."
+         reason  : README exposes bio/medical vocabulary.
+         match      : clinical
+  [012]  README.md:16
+         finding_id: S1_readme_bio_terms:README.md:16:012
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "![Bio](public/bio-screenshot.png)"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [013]  README.md:16
+         finding_id: S1_readme_bio_terms:README.md:16:013
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "![Bio](public/bio-screenshot.png)"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [014]  README.md:18
+         finding_id: S1_readme_bio_terms:README.md:18:014
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "## Why Bio?"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [015]  README.md:20
+         finding_id: S1_readme_bio_terms:README.md:20:015
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "Traditional biomedical research and data is fragmented across dozens of databases and platforms. Bio changes everything by providing:"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [016]  README.md:22
+         finding_id: S1_readme_bio_terms:README.md:22:016
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Comprehensive Medical Data** - PubMed articles, ClinicalTrials.gov data, FDA drug labels, and more"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Medical
+  [017]  README.md:25
+         finding_id: S1_readme_bio_terms:README.md:25:017
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Interactive Visualizations** - Beautiful charts and dashboards for clinical data"
+         reason  : README exposes bio/medical vocabulary.
+         match      : clinical
+  [018]  README.md:26
+         finding_id: S1_readme_bio_terms:README.md:26:018
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Real-Time Intelligence** - Web search integration for breaking medical news"
+         reason  : README exposes bio/medical vocabulary.
+         match      : medical
+  [019]  README.md:35
+         finding_id: S1_readme_bio_terms:README.md:35:019
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Clinical Trials Database** - Search ClinicalTrials.gov for active and completed trials"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Clinical
+  [020]  README.md:38
+         finding_id: S1_readme_bio_terms:README.md:38:020
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Interactive Charts** - Visualize clinical data, drug efficacy, patient outcomes"
+         reason  : README exposes bio/medical vocabulary.
+         match      : clinical
+  [021]  README.md:38
+         finding_id: S1_readme_bio_terms:README.md:38:021
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Interactive Charts** - Visualize clinical data, drug efficacy, patient outcomes"
+         reason  : README exposes bio/medical vocabulary.
+         match      : patient
+  [022]  README.md:44
+         finding_id: S1_readme_bio_terms:README.md:44:022
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Interactive Charts** - Create publication-ready visualizations of clinical data"
+         reason  : README exposes bio/medical vocabulary.
+         match      : clinical
+  [023]  README.md:50
+         finding_id: S1_readme_bio_terms:README.md:50:023
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "Self-hosted mode is the recommended way to run Bio. It provides a complete local environment with:"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [024]  README.md:68
+         finding_id: S1_readme_bio_terms:README.md:68:024
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "git clone https://github.com/yorkeccak/bio.git"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [025]  README.md:69
+         finding_id: S1_readme_bio_terms:README.md:69:025
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "cd bio"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [026]  README.md:165
+         finding_id: S1_readme_bio_terms:README.md:165:026
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- That's it! Bio will automatically detect and use it"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [027]  README.md:167
+         finding_id: S1_readme_bio_terms:README.md:167:027
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "3. **Use in Bio**"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [028]  README.md:216
+         finding_id: S1_readme_bio_terms:README.md:216:028
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "Try these powerful queries to see what Bio can do:"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [029]  README.md:218
+         finding_id: S1_readme_bio_terms:README.md:218:029
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- "What are the latest clinical trials for CAR-T therapy in melanoma?""
+         reason  : README exposes bio/medical vocabulary.
+         match      : clinical
+  [030]  README.md:222
+         finding_id: S1_readme_bio_terms:README.md:222:030
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- "Analyze Phase 3 clinical trial data for immunotherapy drugs""
+         reason  : README exposes bio/medical vocabulary.
+         match      : clinical
+  [031]  README.md:227
+         finding_id: S1_readme_bio_terms:README.md:227:031
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- Keep all your medical research completely private"
+         reason  : README exposes bio/medical vocabulary.
+         match      : medical
+  [032]  README.md:228
+         finding_id: S1_readme_bio_terms:README.md:228:032
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- Perfect for sensitive patient data analysis"
+         reason  : README exposes bio/medical vocabulary.
+         match      : patient
+  [033]  README.md:243
+         finding_id: S1_readme_bio_terms:README.md:243:033
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "The quickest way to get Bio running in production:"
+         reason  : README exposes bio/medical vocabulary.
+         match      : Bio
+  [034]  README.md:260
+         finding_id: S1_readme_bio_terms:README.md:260:034
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- No storage of sensitive medical data"
+         reason  : README exposes bio/medical vocabulary.
+         match      : medical
+  [035]  README.md:279
+         finding_id: S1_readme_bio_terms:README.md:279:035
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "For bugs or feature requests, [open an issue](https://github.com/yorkeccak/bio/issues) or start a [discussion](https://github.com/yorkeccak/bio/discussions)."
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [036]  README.md:279
+         finding_id: S1_readme_bio_terms:README.md:279:036
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "For bugs or feature requests, [open an issue](https://github.com/yorkeccak/bio/issues) or start a [discussion](https://github.com/yorkeccak/bio/discussions)."
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+  [037]  README.md:296
+         finding_id: S1_readme_bio_terms:README.md:296:037
+         pattern : bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "<a href="https://github.com/yorkeccak/bio">GitHub</a>"
+         reason  : README exposes bio/medical vocabulary.
+         match      : bio
+
+S1_clinical_boundary  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_clinical_boundary:.:0:001
+         pattern : clinical_boundary_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_clinical_boundary.
+
+S1_H1_clinical_certainty_hype  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_H1_clinical_certainty_hype:.:0:001
+         pattern : hype_clinical_certainty_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_H1_clinical_certainty_hype.
+
+S1_H2_regulatory_approval_hype  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_H2_regulatory_approval_hype:.:0:001
+         pattern : hype_regulatory_approval_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_H2_regulatory_approval_hype.
+
+S1_H3_autonomous_replacement_hype  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_H3_autonomous_replacement_hype:.:0:001
+         pattern : hype_autonomous_replacement_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_H3_autonomous_replacement_hype.
+
+S1_H4_breakthrough_marketing_hype  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_H4_breakthrough_marketing_hype:.:0:001
+         pattern : hype_breakthrough_marketing_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_H4_breakthrough_marketing_hype.
+
+S1_H5_universal_generalization_hype  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_H5_universal_generalization_hype:.:0:001
+         pattern : hype_universal_generalization_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_H5_universal_generalization_hype.
+
+S1_H6_perfect_accuracy_hype  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_H6_perfect_accuracy_hype:.:0:001
+         pattern : hype_perfect_accuracy_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_H6_perfect_accuracy_hype.
+
+S1_R1_limitations_section  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_R1_limitations_section:.:0:001
+         pattern : limitations_section_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_R1_limitations_section.
+
+S1_R2_regulatory_framework  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_R2_regulatory_framework:.:0:001
+         pattern : regulatory_framework_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_R2_regulatory_framework.
+
+S1_R2_weak_regulatory_self_assertion  [DETECTED]  (1 finding)
+  [001]  README.md:262
+         finding_id: S1_R2_weak_regulatory_self_assertion:README.md:262:001
+         pattern : weak_regulatory_self_assertion_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- HIPAA-compliant architecture (when self-hosted)"
+         reason  : Self-asserted privacy/compliance language detected without stronger regulatory-framework evidence.
+         match      : HIPAA-compliant
+
+S1_R2_unsupported_legal_or_compliance_claim  [DETECTED]  (1 finding)
+  [001]  README.md:262
+         finding_id: S1_R2_unsupported_legal_or_compliance_claim:README.md:262:001
+         pattern : unsupported_legal_or_compliance_claim_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- HIPAA-compliant architecture (when self-hosted)"
+         reason  : Legal, privacy, or compliance claim detected without supporting governance or security-grounding evidence in reviewed sources.
+         claim      : HIPAA-compliant
+         grounding_present      : False
+
+S1_R4_demographic_bias_boundary  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_R4_demographic_bias_boundary:.:0:001
+         pattern : demographic_bias_boundary_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_R4_demographic_bias_boundary.
+
+S1_R5_reproducibility_provisions  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S1_R5_reproducibility_provisions:.:0:001
+         pattern : reproducibility_provisions_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S1_R5_reproducibility_provisions.
+
+S3_T1_workflow_files  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S3_T1_workflow_files:.:0:001
+         pattern : workflow_presence_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S3_T1_workflow_files.
+
+S3_T2_domain_tests  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S3_T2_domain_tests:.:0:001
+         pattern : domain_tests_bio_terms_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S3_T2_domain_tests.
+
+S3_T3_changelog_release_hygiene  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S3_T3_changelog_release_hygiene:.:0:001
+         pattern : changelog_presence_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S3_T3_changelog_release_hygiene.
+
+S3_T3_changelog_bugfix_evidence  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S3_T3_changelog_bugfix_evidence:.:0:001
+         pattern : changelog_bugfix_terms_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S3_T3_changelog_bugfix_evidence.
+
+S3_B1_dependency_manifest  [DETECTED]  (3 findings)
+  [001]  package-lock.json
+         finding_id: S3_B1_dependency_manifest:package-lock.json:0:001
+         pattern : dependency_manifest_presence_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "package-lock.json"
+         reason  : Dependency or environment manifest exists.
+  [001]  package.json
+         finding_id: S3_B1_dependency_manifest:package.json:0:001
+         pattern : dependency_manifest_presence_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "package.json"
+         reason  : Dependency or environment manifest exists.
+  [001]  pnpm-lock.yaml
+         finding_id: S3_B1_dependency_manifest:pnpm-lock.yaml:0:001
+         pattern : dependency_manifest_presence_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "pnpm-lock.yaml"
+         reason  : Dependency or environment manifest exists.
+
+S3_B1_data_source_language  [DETECTED]  (2 findings)
+  [001]  README.md:22
+         finding_id: S3_B1_data_source_language:README.md:22:001
+         pattern : data_source_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Comprehensive Medical Data** - PubMed articles, ClinicalTrials.gov data, FDA drug labels, and more"
+         reason  : Data source, dataset citation, IRB, or provenance language detected.
+         match      : ClinicalTrials
+  [002]  README.md:35
+         finding_id: S3_B1_data_source_language:README.md:35:002
+         pattern : data_source_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **Clinical Trials Database** - Search ClinicalTrials.gov for active and completed trials"
+         reason  : Data source, dataset citation, IRB, or provenance language detected.
+         match      : ClinicalTrials
+
+S3_B2_bias_limitations  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S3_B2_bias_limitations:.:0:001
+         pattern : bias_limitations_v2
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S3_B2_bias_limitations.
+
+S3_B2_measurement_evidence  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S3_B2_measurement_evidence:.:0:001
+         pattern : bias_measurement_terms_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S3_B2_measurement_evidence.
+
+S3_B3_coi_funding  [DETECTED]  (1 finding)
+  [001]  README.md:281
+         finding_id: S3_B3_coi_funding:README.md:281:001
+         pattern : coi_funding_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "## Acknowledgments"
+         reason  : COI, funding, sponsor, or acknowledgement language detected.
+         match      : Acknowledgments
+
+S2_package_bio_terms  [DETECTED]  (2 findings)
+  [001]  package.json:2
+         finding_id: S2_package_bio_terms:package.json:2:001
+         pattern : package_bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : ""name": "bio","
+         reason  : Package metadata exposes bio/medical vocabulary.
+         match      : bio
+  [002]  package.json:5
+         finding_id: S2_package_bio_terms:package.json:5:002
+         pattern : package_bio_terms_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : ""description": "Enterprise-grade biomedical research AI chatbot with access to PubMed, clinical trials, FDA drug labels, and Python code execution","
+         reason  : Package metadata exposes bio/medical vocabulary.
+         match      : clinical
+
+R2R_D5_single_external_service_dependency  [DETECTED]  (8 findings)
+  [001]  .env.example:24
+         finding_id: R2R_D5_single_external_service_dependency:.env.example:24:001
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : medium
+         snippet : "VALYU_API_KEY=valyu_your_api_key_here"
+         reason  : Required external service API key detected for a named workflow dependency.
+         provider      : Valyu
+         env_var      : VALYU_API_KEY
+         required_signal      : True
+  [002]  .env.example:38
+         finding_id: R2R_D5_single_external_service_dependency:.env.example:38:002
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : medium
+         snippet : "DAYTONA_API_KEY=your_daytona_api_key_here"
+         reason  : Required external service API key detected for a named workflow dependency.
+         provider      : Daytona
+         env_var      : DAYTONA_API_KEY
+         required_signal      : True
+  [001]  README.md:23
+         finding_id: R2R_D5_single_external_service_dependency:README.md:23:001
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **One Unified Search** - Powered by Valyu's specialized biomedical data API"
+         reason  : Named external service provider is presented as part of the core repository workflow.
+         provider      : Valyu
+         line_role      : provider_dependency_claim
+  [002]  README.md:60
+         finding_id: R2R_D5_single_external_service_dependency:README.md:60:002
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- Valyu API key (get one at [platform.valyu.ai](https://platform.valyu.ai))"
+         reason  : Named external service provider is presented as part of the core repository workflow.
+         provider      : Valyu
+         line_role      : provider_dependency_claim
+  [003]  README.md:61
+         finding_id: R2R_D5_single_external_service_dependency:README.md:61:003
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- [Daytona](https://www.daytona.io) API key - used for secure sandboxed Python code execution (get one at [app.daytona.io](https://app.daytona.io))"
+         reason  : Named external service provider is presented as part of the core repository workflow.
+         provider      : Daytona
+         line_role      : provider_dependency_claim
+  [004]  README.md:48
+         finding_id: R2R_D5_single_external_service_dependency:README.md:48:004
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "## Quick Start (Self-Hosted)"
+         reason  : Local or self-host claims coexist with required external service dependencies.
+         providers      : ['Daytona', 'Valyu']
+         line_role      : local_or_self_host_claim
+         provider_count      : 2
+  [005]  README.md:50
+         finding_id: R2R_D5_single_external_service_dependency:README.md:50:005
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "Self-hosted mode is the recommended way to run Bio. It provides a complete local environment with:"
+         reason  : Local or self-host claims coexist with required external service dependencies.
+         providers      : ['Daytona', 'Valyu']
+         line_role      : local_or_self_host_claim
+         provider_count      : 2
+  [006]  README.md:51
+         finding_id: R2R_D5_single_external_service_dependency:README.md:51:006
+         pattern : single_external_service_dependency_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **No authentication required** - Auto-login as dev user"
+         reason  : Local or self-host claims coexist with required external service dependencies.
+         providers      : ['Daytona', 'Valyu']
+         line_role      : local_or_self_host_claim
+         provider_count      : 2
+
+C1_hardcoded_credentials  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: C1_hardcoded_credentials:.:0:001
+         pattern : credential_pattern_v2
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No hardcoded credential evidence detected for C1_hardcoded_credentials.
+
+C2_dependency_pinning  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: C2_dependency_pinning:.:0:001
+         pattern : loose_dependency_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No loose dependency evidence detected.
+
+C3_dead_or_deprecated_patient_adjacent_paths  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: C3_dead_or_deprecated_patient_adjacent_paths:.:0:001
+         pattern : deprecated_patient_metadata_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for C3_dead_or_deprecated_patient_adjacent_paths.
+
+C4_exception_handling_clinical_adjacent_paths  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: C4_exception_handling_clinical_adjacent_paths:.:0:001
+         pattern : fail_open_exception_v2
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No fail-open exception handler detected in executable Python code.
+
+BIO_smiles_surface_integrity  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: BIO_smiles_surface_integrity:.:0:001
+         pattern : bio_smiles_surface_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No malformed or suspicious SMILES-like strings detected by conservative surface checks.
+
+BIO_smiles_rdkit_validation  [NOT_APPLICABLE]  (1 finding)
+  [001]  (repository)
+         finding_id: BIO_smiles_rdkit_validation:.:0:001
+         pattern : bio_smiles_rdkit_invalid_v1
+         evidence: not_applicable
+         conf    : high
+         reason  : RDKit optional validation lane unavailable in current environment.
+         lane      : A1_optional_rdkit
+
+BIO_smiles_parser_guard  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: BIO_smiles_parser_guard:.:0:001
+         pattern : bio_smiles_parser_guard_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No missing None/invalid guards detected after SMILES parser calls.
+
+BIO_silent_mock_fallback  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: BIO_silent_mock_fallback:.:0:001
+         pattern : bio_silent_mock_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No silent mock or simulated-data fallback patterns detected in production code paths.
+
+BIO_trace_manifest  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: BIO_trace_manifest:.:0:001
+         pattern : bio_trace_manifest_file_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No traceability manifest or runtime audit-log schema surface detected.
+
+BIO_run_trace  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: BIO_run_trace:.:0:001
+         pattern : bio_run_trace_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No risky subprocess or os.system bio-tool execution patterns detected.
+
+S4_container_environment  [DETECTED]  (1 finding)
+  [001]  Dockerfile
+         finding_id: S4_container_environment:Dockerfile:0:001
+         pattern : container_file_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "Dockerfile"
+         reason  : Container or compose file exists.
+
+S4_make_reproduce_target  [ABSENT]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_make_reproduce_target:.:0:001
+         pattern : make_reproduce_target_v1
+         evidence: confirmed_missing
+         conf    : medium
+         reason  : No Makefile detected.
+
+S4_environment_lock_evidence  [DETECTED]  (2 findings)
+  [001]  package-lock.json
+         finding_id: S4_environment_lock_evidence:package-lock.json:0:001
+         pattern : environment_lock_file_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "package-lock.json"
+         reason  : Environment, dependency, or lock manifest detected.
+  [001]  pnpm-lock.yaml
+         finding_id: S4_environment_lock_evidence:pnpm-lock.yaml:0:001
+         pattern : environment_lock_file_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "pnpm-lock.yaml"
+         reason  : Environment, dependency, or lock manifest detected.
+
+S4_exact_dependency_pins_or_hashes  [DETECTED]  (2 findings)
+  [001]  package-lock.json
+         finding_id: S4_exact_dependency_pins_or_hashes:package-lock.json:0:001
+         pattern : exact_pin_or_hash_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "package-lock.json"
+         reason  : Lock manifest with exact dependency resolution detected.
+  [001]  pnpm-lock.yaml
+         finding_id: S4_exact_dependency_pins_or_hashes:pnpm-lock.yaml:0:001
+         pattern : exact_pin_or_hash_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "pnpm-lock.yaml"
+         reason  : Lock manifest with exact dependency resolution detected.
+
+S4_readme_reproducibility_section  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_readme_reproducibility_section:.:0:001
+         pattern : readme_repro_heading_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : README exists but no reproducibility or replication section heading was detected.
+
+S4_checksum_files  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_checksum_files:.:0:001
+         pattern : checksum_file_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S4_checksum_files.
+
+S4_dataset_url  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_dataset_url:.:0:001
+         pattern : dataset_url_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : Documentation exists but no dataset URL or data source URL was detected.
+
+S4_model_weight_url_or_checksum  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_model_weight_url_or_checksum:.:0:001
+         pattern : model_weight_url_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : Documentation exists but no model artifact URL/checksum evidence was detected.
+
+S4_citation_cff  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_citation_cff:.:0:001
+         pattern : citation_cff_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S4_citation_cff.
+
+S4_license_restriction  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_license_restriction:.:0:001
+         pattern : license_restriction_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : License/readme/docs surfaces exist but no restriction language was detected.
+
+S4_cli_entrypoint  [ABSENT]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_cli_entrypoint:.:0:001
+         pattern : cli_entrypoint_v1
+         evidence: confirmed_missing
+         conf    : medium
+         reason  : No package metadata or Python AST surface detected.
+
+S4_seed_setting  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_seed_setting:.:0:001
+         pattern : ast_seed_setting_stage4_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No deterministic seed setting evidence detected by AST summary.
+
+S4_runnable_examples  [NOT_DETECTED]  (1 finding)
+  [001]  (repository)
+         finding_id: S4_runnable_examples:.:0:001
+         pattern : runnable_example_file_v1
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : No evidence detected for S4_runnable_examples.
+
+========================================================================
+Bio Deterministic Diagnostics
+
+  SMILES Surface Integrity           not_detected=1
+  SMILES RDKit Validation            not_applicable=1
+  SMILES Parser Guard                not_detected=1
+  Silent Mock Fallback               not_detected=1
+  Traceability Manifest Surface      not_detected=1
+  Bio Subprocess Run Trace           not_detected=1
+
+========================================================================
+Regulatory Traceability Assistant
+
+  Regulatory basis note
+  Aligned to current official source classes as of May 2026: EU AI Act (Regulation (EU) 2024/1689), FDA QMSR, FDA AI-enabled device guidance themes, and IMDRF SaMD/GMLP frameworks.
+  This is a traceability aid, not a compliance or clearance determination.
+
+  stage_1                        
+    EU_AI_ACT_ARTICLE_13: signal_only (mapping=weak, evidence=weak)
+      note: Boundary, intended-use, and limitation language is relevant to transparency scaffolding only.
+    COMPLIANCE_CLAIM_GROUNDING_SIGNAL: signal_only (mapping=weak_moderate, evidence=weak)
+      note: Legal or compliance claims without supporting governance evidence are relevant to transparency and quality-system review, not compliance proof.
+  stage_2r                       
+    IMDRF_CLINICAL_CONTEXT_BOUNDARY_SIGNAL: signal_only (mapping=weak_moderate, evidence=moderate)
+      note: Repository-local contradiction and boundary signals are relevant to clinical-context traceability, not clinical validation.
+  stage_3                        
+    EU_AI_ACT_ARTICLE_10: signal_only (mapping=weak, evidence=weak)
+      note: Provenance and bias signals are relevant to data-governance review, but do not verify execution quality.
+  stage_4                        
+    EU_AI_ACT_ARTICLE_12: partially_aligned (mapping=moderate, evidence=moderate)
+      note: Reproducibility and trace manifests support record-keeping scaffolding, not operational logging completeness.
+
+  summary                         Structural signals partially align with traceability scaffolding. This remains a pre-audit traceability aid, not a compliance determination.
+
+========================================================================
+AIRI Coverage
+
+  covered_count                  0
+  detector_scope_total           31
+  coverage_rate                  0.0
+  bundle_scope                   curated_medical_clinical_subset
+  upstream_snapshot              2026-04-23
+
+  known gaps in bundle:
+    - 65.03.03 | Reidentification
+    - 70.02.02 | Misinformation — hallucination of clinical knowledge
+
+========================================================================
+Audit Freshness
+
+  review_after_days               45
+  expires_on                      2026-06-28
+  freshness_basis                 clinical_adjacent_short_cycle
+  change_triggered_reaudit_now    False
+  change_triggered_reasons        none
+  trigger_examples                git_commit_changed, readme_or_docs_claim_surface_changed, dependency_manifest_changed, dataset_or_model_reference_changed
+
+========================================================================
+AST Signal Summary
+
+  files_total                        0
+  files_considered                   0
+  files_parsed                       0
+  files_skipped_size                 0
+  syntax_errors                      0
+  file_limit_exceeded                False
+  test_functions                     0
+  assertion_tests                    0
+  public_functions                   0
+  docstring_functions                0
+  annotated_functions                0
+  seed_settings                      0
+  argparse_cli                       False
+  portable_model_loading             0
+  fail_open_handlers                 0
+
+========================================================================
+Stage 4 Replication Rubric
+
+  S4_container_environment                    10 / 10   Container or compose file exists.
+  S4_make_reproduce_target                     0 / 10   No Makefile detected.
+  S4_environment_lock_evidence                10 / 10   Environment, dependency, or lock manifest detected.
+  S4_exact_dependency_pins_or_hashes          10 / 10   Exact dependency pin or hash evidence detected.
+  S4_readme_reproducibility_section            0 / 10   README exists but no reproducibility or replication section heading was detected.
+  S4_checksum_files                            0 / 10   No evidence detected for S4_checksum_files.
+  S4_dataset_url                               0 / 10   Documentation exists but no dataset URL or data source URL was detected.
+  S4_model_weight_url_or_checksum              0 / 10   Documentation exists but no model artifact URL/checksum evidence was detected.
+  S4_citation_cff                              0 / 5    No evidence detected for S4_citation_cff.
+  S4_license_restriction                       0 / 0    No license/use restriction language detected.
+  S4_cli_entrypoint                            0 / 5    No package metadata or Python AST surface detected.
+  S4_seed_setting                              0 / 5    No deterministic seed setting detected.
+  S4_runnable_examples                         0 / 5    No evidence detected for S4_runnable_examples.
+  stage_4_raw_total                           30 / 100  Raw Stage 4 rubric total. Stage 4 is reported separately and does not alter final score.
+
+========================================================================
+Reasoning Diagnostics
+
+  version                         stem-bio-ai-reasoning-v1.3.2
+  mode                            diagnostic_only
+  final_score_override            False
+  weights                         uncalibrated_initial_priors_pending_benchmark_calibration
+  evidence_budget                 supported
+  confidence_envelope             unknown
+  lane_coherence                  heuristic_mixed
+  uncertainty_budget              review_advised
+  evidence_risk_gate              within_heuristic_gate
+
+========================================================================
+DISCLAIMER: Evidence-surface pre-screen only.
+Not clinical certification, regulatory clearance, or medical advice.

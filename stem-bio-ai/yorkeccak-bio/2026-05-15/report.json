@@ -1,0 +1,2519 @@
+{
+  "schema_version": "stem-ai-local-cli-result-v1.6",
+  "stem_ai_version": "1.7.5",
+  "generated_at_local": "2026-05-14",
+  "execution_mode": "LOCAL_ANALYSIS",
+  "target": {
+    "name": "yorkeccak/bio",
+    "local_path": "D:\\Sanctum\\Extra Repo\\bio",
+    "remote": "https://github.com/yorkeccak/bio.git",
+    "branch": "main",
+    "commit": "100a0bf7497e62ead024df34d8c2e00ae74b8d99",
+    "file_count": 166
+  },
+  "classification": {
+    "clinical_adjacent": true,
+    "ca_severity": "CA-INDIRECT",
+    "ca_taxonomy_version": "ca-taxonomy-v1",
+    "ca_taxonomy_source": "runtime_regex_hardcoded_in_scanner_py",
+    "t0_hard_floor": false,
+    "score_cap": 69,
+    "has_explicit_clinical_boundary": false
+  },
+  "score": {
+    "stage_1_readme_intent": 75,
+    "stage_2_cross_platform": "not_applicable_in_LOCAL_ANALYSIS",
+    "stage_2_repo_local_consistency": 40,
+    "stage_2_lane": "STAGE_2R_REPO_LOCAL_CONSISTENCY",
+    "stage_3_code_bio": 25,
+    "weights": {
+      "stage_1": 0.4,
+      "stage_2": 0.2,
+      "stage_3": 0.4
+    },
+    "risk_penalty": 0,
+    "raw_score_before_floor": 48,
+    "final_score": 48,
+    "formal_tier": "T1 Quarantine",
+    "use_scope": "Exploratory review only; no patient-adjacent use."
+  },
+  "stage_2r_rubric": {
+    "baseline": {
+      "score": 60,
+      "evidence": "Non-nascent local repository baseline."
+    },
+    "R2R_1_readme_package_code_alignment": {
+      "score": 15,
+      "evidence": "README has domain overlap with package metadata or entry points."
+    },
+    "R2R_D2_missing_clinical_use_boundary": {
+      "score": -20,
+      "evidence": "Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary."
+    },
+    "R2R_D4_unsupported_workflow_claim": {
+      "score": -15,
+      "evidence": "README/docs claim runnable workflow, CLI, test, or demo support without matching local support surfaces."
+    },
+    "calculation": "60 plus local consistency additions/deductions = 40",
+    "stage_2r_score": 40,
+    "verdict": "Local Contradiction / Insufficient Consistency"
+  },
+  "stage_1_rubric": {
+    "baseline": {
+      "score": 60,
+      "evidence": "Non-nascent README evidence baseline."
+    },
+    "S1_domain_readme": {
+      "score": 10,
+      "evidence": "README exposes bio/medical domain vocabulary."
+    },
+    "S1_domain_package": {
+      "score": 5,
+      "evidence": "Package metadata exposes bio/medical domain vocabulary."
+    },
+    "R2_regulatory_framework": {
+      "score": 5,
+      "evidence": "Self-asserted privacy/compliance language detected without stronger regulatory-framework evidence."
+    },
+    "R3_clinical_disclaimer": {
+      "score": -5,
+      "evidence": "CA-INDIRECT surface lacks explicit non-clinical or non-diagnostic boundary."
+    },
+    "calculation": "60 plus Stage 1 evidence additions/deductions = 75",
+    "stage_1_score": 75
+  },
+  "stage_3_rubric": {
+    "T1_CI_CD": {
+      "score": 0,
+      "max": 15,
+      "evidence": "No workflow files detected."
+    },
+    "T2_domain_tests": {
+      "score": 0,
+      "max": 15,
+      "evidence": "No tests detected."
+    },
+    "T3_changelog_release_hygiene": {
+      "score": 0,
+      "max": 15,
+      "evidence": "No changelog detected."
+    },
+    "B1_data_provenance_controls": {
+      "score": 15,
+      "max": 15,
+      "evidence": "Dependency manifest detected with data source, IRB, or dataset citation language."
+    },
+    "B2_bias_limitations": {
+      "score": 0,
+      "max": 15,
+      "evidence": "No bias/limitations language detected by local CLI scan."
+    },
+    "B3_coi_funding": {
+      "score": 5,
+      "max": 5,
+      "evidence": "COI, funding, sponsor, or acknowledgement language detected."
+    },
+    "stage_3_raw_total": {
+      "score": 20,
+      "max": 80,
+      "evidence": "Raw rubric total before normalization to 100."
+    }
+  },
+  "replication_score": 30,
+  "replication_tier": "R1",
+  "stage_4_rubric": {
+    "S4_container_environment": {
+      "score": 10,
+      "max": 10,
+      "evidence": "Container or compose file exists."
+    },
+    "S4_make_reproduce_target": {
+      "score": 0,
+      "max": 10,
+      "evidence": "No Makefile detected."
+    },
+    "S4_environment_lock_evidence": {
+      "score": 10,
+      "max": 10,
+      "evidence": "Environment, dependency, or lock manifest detected."
+    },
+    "S4_exact_dependency_pins_or_hashes": {
+      "score": 10,
+      "max": 10,
+      "evidence": "Exact dependency pin or hash evidence detected."
+    },
+    "S4_readme_reproducibility_section": {
+      "score": 0,
+      "max": 10,
+      "evidence": "README exists but no reproducibility or replication section heading was detected."
+    },
+    "S4_checksum_files": {
+      "score": 0,
+      "max": 10,
+      "evidence": "No evidence detected for S4_checksum_files."
+    },
+    "S4_dataset_url": {
+      "score": 0,
+      "max": 10,
+      "evidence": "Documentation exists but no dataset URL or data source URL was detected."
+    },
+    "S4_model_weight_url_or_checksum": {
+      "score": 0,
+      "max": 10,
+      "evidence": "Documentation exists but no model artifact URL/checksum evidence was detected."
+    },
+    "S4_citation_cff": {
+      "score": 0,
+      "max": 5,
+      "evidence": "No evidence detected for S4_citation_cff."
+    },
+    "S4_license_restriction": {
+      "score": 0,
+      "max": 0,
+      "evidence": "No license/use restriction language detected."
+    },
+    "S4_cli_entrypoint": {
+      "score": 0,
+      "max": 5,
+      "evidence": "No package metadata or Python AST surface detected."
+    },
+    "S4_seed_setting": {
+      "score": 0,
+      "max": 5,
+      "evidence": "No deterministic seed setting detected."
+    },
+    "S4_runnable_examples": {
+      "score": 0,
+      "max": 5,
+      "evidence": "No evidence detected for S4_runnable_examples."
+    },
+    "stage_4_raw_total": {
+      "score": 30,
+      "max": 100,
+      "evidence": "Raw Stage 4 rubric total. Stage 4 is reported separately and does not alter final score."
+    }
+  },
+  "code_integrity": {
+    "C1_hardcoded_credentials": {
+      "status": "PASS",
+      "evidence": [
+        "No direct credential patterns detected by local CLI scan."
+      ]
+    },
+    "C2_dependency_pinning": {
+      "status": "PASS",
+      "evidence": [
+        "Dependency manifest appears pinned or not present."
+      ]
+    },
+    "C3_dead_or_deprecated_patient_adjacent_paths": {
+      "status": "PASS",
+      "evidence": [
+        "No deprecated patient-adjacent metadata patterns detected."
+      ]
+    },
+    "C4_exception_handling_clinical_adjacent_paths": {
+      "status": "PASS",
+      "evidence": [
+        "No executable fail-open exception handler detected."
+      ]
+    }
+  },
+  "code_contract": {
+    "CC1_clinical_zero_default": {
+      "count": 0,
+      "status": "PASS"
+    },
+    "CC2_api_contract": {
+      "count": 0,
+      "status": "PASS"
+    },
+    "CC3_shallow_validator": {
+      "count": 0,
+      "status": "PASS"
+    }
+  },
+  "airi_risk_coverage": {
+    "airi_version": "V4_03",
+    "airi_source": "https://airisk.mit.edu/ | The AI Risk Repository | license=MIT",
+    "airi_registry_version": "stem-ai-airi-registry-v1",
+    "airi_bundle_version": "stem-ai-airi-runtime-bundle-v1",
+    "airi_mapping_version": "stem-ai-airi-detector-mapping-v1",
+    "airi_bundle_scope": "curated_medical_clinical_subset",
+    "airi_upstream_snapshot_date": "2026-04-23",
+    "airi_upstream_license": "MIT",
+    "airi_attribution_note": "Derived from The AI Risk Repository V4_03. Original source remains MIT-licensed and must be attributed in README, docs, runtime artifacts, and local registry metadata.",
+    "total_risks_in_registry": 1595,
+    "total_risks_in_bundle": 184,
+    "total_risks_in_detector_scope": 31,
+    "detectors_triggered": [],
+    "covered_risks": [],
+    "covered_count": 0,
+    "coverage_rate": 0.0,
+    "known_gaps": [
+      {
+        "id": "65.03.03",
+        "title": "Reidentification",
+        "subdomain_id": "2.1",
+        "gap_scope": "in_runtime_bundle",
+        "note": "CC-3 catches shallow validators; dedicated reidentify() API exposure check (CC-4) not yet implemented."
+      },
+      {
+        "id": "70.02.02",
+        "title": "Misinformation \u2014 hallucination of clinical knowledge",
+        "subdomain_id": "3.1",
+        "gap_scope": "in_runtime_bundle",
+        "note": "CC-1 catches threshold=0.0 default; actual output-level hallucination rate requires Layer 3 dynamic testing."
+      },
+      {
+        "id": "39.25.00",
+        "title": "Verifiability \u2014 black-box AI in medical healthcare",
+        "subdomain_id": "7.4",
+        "gap_scope": "in_runtime_bundle",
+        "note": "B2 detects surface language only; Model Card / interpretability artifact presence not yet checked."
+      },
+      {
+        "id": "11.02.00",
+        "title": "Allocative Harms \u2014 withheld resources in healthcare",
+        "subdomain_id": "1.1",
+        "gap_scope": "outside_runtime_bundle_reference",
+        "note": "Subgroup performance disparities require dynamic evaluation; outside static scan scope."
+      },
+      {
+        "id": "72.04.02",
+        "title": "Market Concentration \u2014 healthcare single-point failures",
+        "subdomain_id": "6.1",
+        "gap_scope": "outside_runtime_bundle_reference",
+        "note": "Systemic risk beyond single-repository scope."
+      }
+    ],
+    "known_gaps_in_bundle": [
+      {
+        "id": "65.03.03",
+        "title": "Reidentification",
+        "subdomain_id": "2.1",
+        "gap_scope": "in_runtime_bundle",
+        "note": "CC-3 catches shallow validators; dedicated reidentify() API exposure check (CC-4) not yet implemented."
+      },
+      {
+        "id": "70.02.02",
+        "title": "Misinformation \u2014 hallucination of clinical knowledge",
+        "subdomain_id": "3.1",
+        "gap_scope": "in_runtime_bundle",
+        "note": "CC-1 catches threshold=0.0 default; actual output-level hallucination rate requires Layer 3 dynamic testing."
+      },
+      {
+        "id": "39.25.00",
+        "title": "Verifiability \u2014 black-box AI in medical healthcare",
+        "subdomain_id": "7.4",
+        "gap_scope": "in_runtime_bundle",
+        "note": "B2 detects surface language only; Model Card / interpretability artifact presence not yet checked."
+      }
+    ],
+    "known_gaps_outside_bundle": [
+      {
+        "id": "11.02.00",
+        "title": "Allocative Harms \u2014 withheld resources in healthcare",
+        "subdomain_id": "1.1",
+        "gap_scope": "outside_runtime_bundle_reference",
+        "note": "Subgroup performance disparities require dynamic evaluation; outside static scan scope."
+      },
+      {
+        "id": "72.04.02",
+        "title": "Market Concentration \u2014 healthcare single-point failures",
+        "subdomain_id": "6.1",
+        "gap_scope": "outside_runtime_bundle_reference",
+        "note": "Systemic risk beyond single-repository scope."
+      }
+    ]
+  },
+  "evidence_ledger": [
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:2:001",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 2,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/stargazers\"><img src=\"https://img.shields.io/github/stars/yorkeccak/bio?style=flat&color=yellow\" alt=\"GitHub Stars\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:2:002",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 2,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/stargazers\"><img src=\"https://img.shields.io/github/stars/yorkeccak/bio?style=flat&color=yellow\" alt=\"GitHub Stars\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:3:003",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 3,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/blob/main/LICENSE\"><img src=\"https://img.shields.io/github/license/yorkeccak/bio\" alt=\"License\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:3:004",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 3,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/blob/main/LICENSE\"><img src=\"https://img.shields.io/github/license/yorkeccak/bio\" alt=\"License\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:4:005",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 4,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/network/members\"><img src=\"https://img.shields.io/github/forks/yorkeccak/bio?style=flat\" alt=\"Forks\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:4:006",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 4,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/network/members\"><img src=\"https://img.shields.io/github/forks/yorkeccak/bio?style=flat\" alt=\"Forks\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:5:007",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 5,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/graphs/contributors\"><img src=\"https://img.shields.io/github/contributors/yorkeccak/bio\" alt=\"Contributors\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:5:008",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 5,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio/graphs/contributors\"><img src=\"https://img.shields.io/github/contributors/yorkeccak/bio\" alt=\"Contributors\"></a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:8:009",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 8,
+      "snippet": "# Bio",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:10:010",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 10,
+      "snippet": "Try the hosted version [here](https://bio.valyu.ai) \ud83d\ude4c",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:14:011",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 14,
+      "snippet": "> **Enterprise-grade biomedical research behind a chat interface** - Access PubMed, clinical trials, FDA drug labels, and run complex Python analyses through natural language. P...",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "clinical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:16:012",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 16,
+      "snippet": "![Bio](public/bio-screenshot.png)",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:16:013",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 16,
+      "snippet": "![Bio](public/bio-screenshot.png)",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:18:014",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 18,
+      "snippet": "## Why Bio?",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:20:015",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 20,
+      "snippet": "Traditional biomedical research and data is fragmented across dozens of databases and platforms. Bio changes everything by providing:",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:22:016",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 22,
+      "snippet": "- **Comprehensive Medical Data** - PubMed articles, ClinicalTrials.gov data, FDA drug labels, and more",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Medical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:25:017",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 25,
+      "snippet": "- **Interactive Visualizations** - Beautiful charts and dashboards for clinical data",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "clinical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:26:018",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 26,
+      "snippet": "- **Real-Time Intelligence** - Web search integration for breaking medical news",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "medical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:35:019",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 35,
+      "snippet": "- **Clinical Trials Database** - Search ClinicalTrials.gov for active and completed trials",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Clinical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:38:020",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 38,
+      "snippet": "- **Interactive Charts** - Visualize clinical data, drug efficacy, patient outcomes",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "clinical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:38:021",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 38,
+      "snippet": "- **Interactive Charts** - Visualize clinical data, drug efficacy, patient outcomes",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "patient"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:44:022",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 44,
+      "snippet": "- **Interactive Charts** - Create publication-ready visualizations of clinical data",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "clinical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:50:023",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 50,
+      "snippet": "Self-hosted mode is the recommended way to run Bio. It provides a complete local environment with:",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:68:024",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 68,
+      "snippet": "git clone https://github.com/yorkeccak/bio.git",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:69:025",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 69,
+      "snippet": "cd bio",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:165:026",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 165,
+      "snippet": "- That's it! Bio will automatically detect and use it",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:167:027",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 167,
+      "snippet": "3. **Use in Bio**",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:216:028",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 216,
+      "snippet": "Try these powerful queries to see what Bio can do:",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:218:029",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 218,
+      "snippet": "- \"What are the latest clinical trials for CAR-T therapy in melanoma?\"",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "clinical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:222:030",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 222,
+      "snippet": "- \"Analyze Phase 3 clinical trial data for immunotherapy drugs\"",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "clinical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:227:031",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 227,
+      "snippet": "- Keep all your medical research completely private",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "medical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:228:032",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 228,
+      "snippet": "- Perfect for sensitive patient data analysis",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "patient"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:243:033",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 243,
+      "snippet": "The quickest way to get Bio running in production:",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "Bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:260:034",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 260,
+      "snippet": "- No storage of sensitive medical data",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "medical"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:279:035",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 279,
+      "snippet": "For bugs or feature requests, [open an issue](https://github.com/yorkeccak/bio/issues) or start a [discussion](https://github.com/yorkeccak/bio/discussions).",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:279:036",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 279,
+      "snippet": "For bugs or feature requests, [open an issue](https://github.com/yorkeccak/bio/issues) or start a [discussion](https://github.com/yorkeccak/bio/discussions).",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_readme_bio_terms:README.md:296:037",
+      "detector": "S1_readme_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 296,
+      "snippet": "<a href=\"https://github.com/yorkeccak/bio\">GitHub</a>",
+      "match_type": "regex",
+      "explanation": "README exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S1_clinical_boundary:.:0:001",
+      "detector": "S1_clinical_boundary",
+      "detector_version": "1.7.5",
+      "pattern_id": "clinical_boundary_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_clinical_boundary."
+    },
+    {
+      "finding_id": "S1_H1_clinical_certainty_hype:.:0:001",
+      "detector": "S1_H1_clinical_certainty_hype",
+      "detector_version": "1.7.5",
+      "pattern_id": "hype_clinical_certainty_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_H1_clinical_certainty_hype."
+    },
+    {
+      "finding_id": "S1_H2_regulatory_approval_hype:.:0:001",
+      "detector": "S1_H2_regulatory_approval_hype",
+      "detector_version": "1.7.5",
+      "pattern_id": "hype_regulatory_approval_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_H2_regulatory_approval_hype."
+    },
+    {
+      "finding_id": "S1_H3_autonomous_replacement_hype:.:0:001",
+      "detector": "S1_H3_autonomous_replacement_hype",
+      "detector_version": "1.7.5",
+      "pattern_id": "hype_autonomous_replacement_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_H3_autonomous_replacement_hype."
+    },
+    {
+      "finding_id": "S1_H4_breakthrough_marketing_hype:.:0:001",
+      "detector": "S1_H4_breakthrough_marketing_hype",
+      "detector_version": "1.7.5",
+      "pattern_id": "hype_breakthrough_marketing_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_H4_breakthrough_marketing_hype."
+    },
+    {
+      "finding_id": "S1_H5_universal_generalization_hype:.:0:001",
+      "detector": "S1_H5_universal_generalization_hype",
+      "detector_version": "1.7.5",
+      "pattern_id": "hype_universal_generalization_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_H5_universal_generalization_hype."
+    },
+    {
+      "finding_id": "S1_H6_perfect_accuracy_hype:.:0:001",
+      "detector": "S1_H6_perfect_accuracy_hype",
+      "detector_version": "1.7.5",
+      "pattern_id": "hype_perfect_accuracy_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_H6_perfect_accuracy_hype."
+    },
+    {
+      "finding_id": "S1_R1_limitations_section:.:0:001",
+      "detector": "S1_R1_limitations_section",
+      "detector_version": "1.7.5",
+      "pattern_id": "limitations_section_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_R1_limitations_section."
+    },
+    {
+      "finding_id": "S1_R2_regulatory_framework:.:0:001",
+      "detector": "S1_R2_regulatory_framework",
+      "detector_version": "1.7.5",
+      "pattern_id": "regulatory_framework_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_R2_regulatory_framework."
+    },
+    {
+      "finding_id": "S1_R2_weak_regulatory_self_assertion:README.md:262:001",
+      "detector": "S1_R2_weak_regulatory_self_assertion",
+      "detector_version": "1.7.5",
+      "pattern_id": "weak_regulatory_self_assertion_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 262,
+      "snippet": "- HIPAA-compliant architecture (when self-hosted)",
+      "match_type": "regex",
+      "explanation": "Self-asserted privacy/compliance language detected without stronger regulatory-framework evidence.",
+      "metadata": {
+        "match": "HIPAA-compliant"
+      }
+    },
+    {
+      "finding_id": "S1_R2_unsupported_legal_or_compliance_claim:README.md:262:001",
+      "detector": "S1_R2_unsupported_legal_or_compliance_claim",
+      "detector_version": "1.7.5",
+      "pattern_id": "unsupported_legal_or_compliance_claim_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 262,
+      "snippet": "- HIPAA-compliant architecture (when self-hosted)",
+      "match_type": "regex",
+      "explanation": "Legal, privacy, or compliance claim detected without supporting governance or security-grounding evidence in reviewed sources.",
+      "metadata": {
+        "claim": "HIPAA-compliant",
+        "grounding_present": false
+      }
+    },
+    {
+      "finding_id": "S1_R4_demographic_bias_boundary:.:0:001",
+      "detector": "S1_R4_demographic_bias_boundary",
+      "detector_version": "1.7.5",
+      "pattern_id": "demographic_bias_boundary_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_R4_demographic_bias_boundary."
+    },
+    {
+      "finding_id": "S1_R5_reproducibility_provisions:.:0:001",
+      "detector": "S1_R5_reproducibility_provisions",
+      "detector_version": "1.7.5",
+      "pattern_id": "reproducibility_provisions_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S1_R5_reproducibility_provisions."
+    },
+    {
+      "finding_id": "S3_T1_workflow_files:.:0:001",
+      "detector": "S3_T1_workflow_files",
+      "detector_version": "1.7.5",
+      "pattern_id": "workflow_presence_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "file_presence",
+      "explanation": "No evidence detected for S3_T1_workflow_files."
+    },
+    {
+      "finding_id": "S3_T2_domain_tests:.:0:001",
+      "detector": "S3_T2_domain_tests",
+      "detector_version": "1.7.5",
+      "pattern_id": "domain_tests_bio_terms_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S3_T2_domain_tests."
+    },
+    {
+      "finding_id": "S3_T3_changelog_release_hygiene:.:0:001",
+      "detector": "S3_T3_changelog_release_hygiene",
+      "detector_version": "1.7.5",
+      "pattern_id": "changelog_presence_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "file_presence",
+      "explanation": "No evidence detected for S3_T3_changelog_release_hygiene."
+    },
+    {
+      "finding_id": "S3_T3_changelog_bugfix_evidence:.:0:001",
+      "detector": "S3_T3_changelog_bugfix_evidence",
+      "detector_version": "1.7.5",
+      "pattern_id": "changelog_bugfix_terms_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S3_T3_changelog_bugfix_evidence."
+    },
+    {
+      "finding_id": "S3_B1_dependency_manifest:package-lock.json:0:001",
+      "detector": "S3_B1_dependency_manifest",
+      "detector_version": "1.7.5",
+      "pattern_id": "dependency_manifest_presence_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "package-lock.json",
+      "line": 0,
+      "snippet": "package-lock.json",
+      "match_type": "file_presence",
+      "explanation": "Dependency or environment manifest exists."
+    },
+    {
+      "finding_id": "S3_B1_dependency_manifest:package.json:0:001",
+      "detector": "S3_B1_dependency_manifest",
+      "detector_version": "1.7.5",
+      "pattern_id": "dependency_manifest_presence_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "package.json",
+      "line": 0,
+      "snippet": "package.json",
+      "match_type": "file_presence",
+      "explanation": "Dependency or environment manifest exists."
+    },
+    {
+      "finding_id": "S3_B1_dependency_manifest:pnpm-lock.yaml:0:001",
+      "detector": "S3_B1_dependency_manifest",
+      "detector_version": "1.7.5",
+      "pattern_id": "dependency_manifest_presence_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "pnpm-lock.yaml",
+      "line": 0,
+      "snippet": "pnpm-lock.yaml",
+      "match_type": "file_presence",
+      "explanation": "Dependency or environment manifest exists."
+    },
+    {
+      "finding_id": "S3_B1_data_source_language:README.md:22:001",
+      "detector": "S3_B1_data_source_language",
+      "detector_version": "1.7.5",
+      "pattern_id": "data_source_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 22,
+      "snippet": "- **Comprehensive Medical Data** - PubMed articles, ClinicalTrials.gov data, FDA drug labels, and more",
+      "match_type": "regex",
+      "explanation": "Data source, dataset citation, IRB, or provenance language detected.",
+      "metadata": {
+        "match": "ClinicalTrials"
+      }
+    },
+    {
+      "finding_id": "S3_B1_data_source_language:README.md:35:002",
+      "detector": "S3_B1_data_source_language",
+      "detector_version": "1.7.5",
+      "pattern_id": "data_source_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 35,
+      "snippet": "- **Clinical Trials Database** - Search ClinicalTrials.gov for active and completed trials",
+      "match_type": "regex",
+      "explanation": "Data source, dataset citation, IRB, or provenance language detected.",
+      "metadata": {
+        "match": "ClinicalTrials"
+      }
+    },
+    {
+      "finding_id": "S3_B2_bias_limitations:.:0:001",
+      "detector": "S3_B2_bias_limitations",
+      "detector_version": "1.7.5",
+      "pattern_id": "bias_limitations_v2",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S3_B2_bias_limitations."
+    },
+    {
+      "finding_id": "S3_B2_measurement_evidence:.:0:001",
+      "detector": "S3_B2_measurement_evidence",
+      "detector_version": "1.7.5",
+      "pattern_id": "bias_measurement_terms_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for S3_B2_measurement_evidence."
+    },
+    {
+      "finding_id": "S3_B3_coi_funding:README.md:281:001",
+      "detector": "S3_B3_coi_funding",
+      "detector_version": "1.7.5",
+      "pattern_id": "coi_funding_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "README.md",
+      "line": 281,
+      "snippet": "## Acknowledgments",
+      "match_type": "regex",
+      "explanation": "COI, funding, sponsor, or acknowledgement language detected.",
+      "metadata": {
+        "match": "Acknowledgments"
+      }
+    },
+    {
+      "finding_id": "S2_package_bio_terms:package.json:2:001",
+      "detector": "S2_package_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "package_bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "package.json",
+      "line": 2,
+      "snippet": "\"name\": \"bio\",",
+      "match_type": "regex",
+      "explanation": "Package metadata exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "bio"
+      }
+    },
+    {
+      "finding_id": "S2_package_bio_terms:package.json:5:002",
+      "detector": "S2_package_bio_terms",
+      "detector_version": "1.7.5",
+      "pattern_id": "package_bio_terms_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "package.json",
+      "line": 5,
+      "snippet": "\"description\": \"Enterprise-grade biomedical research AI chatbot with access to PubMed, clinical trials, FDA drug labels, and Python code execution\",",
+      "match_type": "regex",
+      "explanation": "Package metadata exposes bio/medical vocabulary.",
+      "metadata": {
+        "match": "clinical"
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:.env.example:24:001",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "medium",
+      "severity": "warn",
+      "file": ".env.example",
+      "line": 24,
+      "snippet": "VALYU_API_KEY=valyu_your_api_key_here",
+      "match_type": "config",
+      "explanation": "Required external service API key detected for a named workflow dependency.",
+      "metadata": {
+        "provider": "Valyu",
+        "env_var": "VALYU_API_KEY",
+        "required_signal": true
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:.env.example:38:002",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "medium",
+      "severity": "warn",
+      "file": ".env.example",
+      "line": 38,
+      "snippet": "DAYTONA_API_KEY=your_daytona_api_key_here",
+      "match_type": "config",
+      "explanation": "Required external service API key detected for a named workflow dependency.",
+      "metadata": {
+        "provider": "Daytona",
+        "env_var": "DAYTONA_API_KEY",
+        "required_signal": true
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:README.md:23:001",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 23,
+      "snippet": "- **One Unified Search** - Powered by Valyu's specialized biomedical data API",
+      "match_type": "regex",
+      "explanation": "Named external service provider is presented as part of the core repository workflow.",
+      "metadata": {
+        "provider": "Valyu",
+        "line_role": "provider_dependency_claim"
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:README.md:60:002",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 60,
+      "snippet": "- Valyu API key (get one at [platform.valyu.ai](https://platform.valyu.ai))",
+      "match_type": "regex",
+      "explanation": "Named external service provider is presented as part of the core repository workflow.",
+      "metadata": {
+        "provider": "Valyu",
+        "line_role": "provider_dependency_claim"
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:README.md:61:003",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 61,
+      "snippet": "- [Daytona](https://www.daytona.io) API key - used for secure sandboxed Python code execution (get one at [app.daytona.io](https://app.daytona.io))",
+      "match_type": "regex",
+      "explanation": "Named external service provider is presented as part of the core repository workflow.",
+      "metadata": {
+        "provider": "Daytona",
+        "line_role": "provider_dependency_claim"
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:README.md:48:004",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 48,
+      "snippet": "## Quick Start (Self-Hosted)",
+      "match_type": "regex",
+      "explanation": "Local or self-host claims coexist with required external service dependencies.",
+      "metadata": {
+        "providers": [
+          "Daytona",
+          "Valyu"
+        ],
+        "line_role": "local_or_self_host_claim",
+        "provider_count": 2
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:README.md:50:005",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 50,
+      "snippet": "Self-hosted mode is the recommended way to run Bio. It provides a complete local environment with:",
+      "match_type": "regex",
+      "explanation": "Local or self-host claims coexist with required external service dependencies.",
+      "metadata": {
+        "providers": [
+          "Daytona",
+          "Valyu"
+        ],
+        "line_role": "local_or_self_host_claim",
+        "provider_count": 2
+      }
+    },
+    {
+      "finding_id": "R2R_D5_single_external_service_dependency:README.md:51:006",
+      "detector": "R2R_D5_single_external_service_dependency",
+      "detector_version": "1.7.5",
+      "pattern_id": "single_external_service_dependency_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 51,
+      "snippet": "- **No authentication required** - Auto-login as dev user",
+      "match_type": "regex",
+      "explanation": "Local or self-host claims coexist with required external service dependencies.",
+      "metadata": {
+        "providers": [
+          "Daytona",
+          "Valyu"
+        ],
+        "line_role": "local_or_self_host_claim",
+        "provider_count": 2
+      }
+    },
+    {
+      "finding_id": "C1_hardcoded_credentials:.:0:001",
+      "detector": "C1_hardcoded_credentials",
+      "detector_version": "1.7.5",
+      "pattern_id": "credential_pattern_v2",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No hardcoded credential evidence detected for C1_hardcoded_credentials."
+    },
+    {
+      "finding_id": "C2_dependency_pinning:.:0:001",
+      "detector": "C2_dependency_pinning",
+      "detector_version": "1.7.5",
+      "pattern_id": "loose_dependency_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "dependency",
+      "explanation": "No loose dependency evidence detected."
+    },
+    {
+      "finding_id": "C3_dead_or_deprecated_patient_adjacent_paths:.:0:001",
+      "detector": "C3_dead_or_deprecated_patient_adjacent_paths",
+      "detector_version": "1.7.5",
+      "pattern_id": "deprecated_patient_metadata_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "regex",
+      "explanation": "No evidence detected for C3_dead_or_deprecated_patient_adjacent_paths."
+    },
+    {
+      "finding_id": "C4_exception_handling_clinical_adjacent_paths:.:0:001",
+      "detector": "C4_exception_handling_clinical_adjacent_paths",
+      "detector_version": "1.7.5",
+      "pattern_id": "fail_open_exception_v2",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "ast",
+      "explanation": "No fail-open exception handler detected in executable Python code."
+    },
+    {
+      "finding_id": "BIO_smiles_surface_integrity:.:0:001",
+      "detector": "BIO_smiles_surface_integrity",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_smiles_surface_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "ast",
+      "explanation": "No malformed or suspicious SMILES-like strings detected by conservative surface checks."
+    },
+    {
+      "finding_id": "BIO_smiles_rdkit_validation:.:0:001",
+      "detector": "BIO_smiles_rdkit_validation",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_smiles_rdkit_invalid_v1",
+      "status": "not_applicable",
+      "evidence_status": "not_applicable",
+      "confidence": "high",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "ast",
+      "explanation": "RDKit optional validation lane unavailable in current environment.",
+      "metadata": {
+        "lane": "A1_optional_rdkit"
+      }
+    },
+    {
+      "finding_id": "BIO_smiles_parser_guard:.:0:001",
+      "detector": "BIO_smiles_parser_guard",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_smiles_parser_guard_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "ast",
+      "explanation": "No missing None/invalid guards detected after SMILES parser calls."
+    },
+    {
+      "finding_id": "BIO_silent_mock_fallback:.:0:001",
+      "detector": "BIO_silent_mock_fallback",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_silent_mock_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "ast",
+      "explanation": "No silent mock or simulated-data fallback patterns detected in production code paths."
+    },
+    {
+      "finding_id": "BIO_trace_manifest:.:0:001",
+      "detector": "BIO_trace_manifest",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_trace_manifest_file_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "file_presence",
+      "explanation": "No traceability manifest or runtime audit-log schema surface detected."
+    },
+    {
+      "finding_id": "BIO_run_trace:.:0:001",
+      "detector": "BIO_run_trace",
+      "detector_version": "1.7.5",
+      "pattern_id": "bio_run_trace_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "ast",
+      "explanation": "No risky subprocess or os.system bio-tool execution patterns detected."
+    },
+    {
+      "finding_id": "S4_container_environment:Dockerfile:0:001",
+      "detector": "S4_container_environment",
+      "detector_version": "1.7.5",
+      "pattern_id": "container_file_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "Dockerfile",
+      "line": 0,
+      "snippet": "Dockerfile",
+      "match_type": "file_presence",
+      "explanation": "Container or compose file exists."
+    },
+    {
+      "finding_id": "S4_make_reproduce_target:.:0:001",
+      "detector": "S4_make_reproduce_target",
+      "detector_version": "1.7.5",
+      "pattern_id": "make_reproduce_target_v1",
+      "status": "absent",
+      "evidence_status": "confirmed_missing",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "aggregate",
+      "explanation": "No Makefile detected."
+    },
+    {
+      "finding_id": "S4_environment_lock_evidence:package-lock.json:0:001",
+      "detector": "S4_environment_lock_evidence",
+      "detector_version": "1.7.5",
+      "pattern_id": "environment_lock_file_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "package-lock.json",
+      "line": 0,
+      "snippet": "package-lock.json",
+      "match_type": "file_presence",
+      "explanation": "Environment, dependency, or lock manifest detected."
+    },
+    {
+      "finding_id": "S4_environment_lock_evidence:pnpm-lock.yaml:0:001",
+      "detector": "S4_environment_lock_evidence",
+      "detector_version": "1.7.5",
+      "pattern_id": "environment_lock_file_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "pnpm-lock.yaml",
+      "line": 0,
+      "snippet": "pnpm-lock.yaml",
+      "match_type": "file_presence",
+      "explanation": "Environment, dependency, or lock manifest detected."
+    },
+    {
+      "finding_id": "S4_exact_dependency_pins_or_hashes:package-lock.json:0:001",
+      "detector": "S4_exact_dependency_pins_or_hashes",
+      "detector_version": "1.7.5",
+      "pattern_id": "exact_pin_or_hash_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "package-lock.json",
+      "line": 0,
+      "snippet": "package-lock.json",
+      "match_type": "file_presence",
+      "explanation": "Lock manifest with exact dependency resolution detected."
+    },
+    {
+      "finding_id": "S4_exact_dependency_pins_or_hashes:pnpm-lock.yaml:0:001",
+      "detector": "S4_exact_dependency_pins_or_hashes",
+      "detector_version": "1.7.5",
+      "pattern_id": "exact_pin_or_hash_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "info",
+      "file": "pnpm-lock.yaml",
+      "line": 0,
+      "snippet": "pnpm-lock.yaml",
+      "match_type": "file_presence",
+      "explanation": "Lock manifest with exact dependency resolution detected."
+    },
+    {
+      "finding_id": "S4_readme_reproducibility_section:.:0:001",
+      "detector": "S4_readme_reproducibility_section",
+      "detector_version": "1.7.5",
+      "pattern_id": "readme_repro_heading_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "aggregate",
+      "explanation": "README exists but no reproducibility or replication section heading was detected."
+    },
+    {
+      "finding_id": "S4_checksum_files:.:0:001",
+      "detector": "S4_checksum_files",
+      "detector_version": "1.7.5",
+      "pattern_id": "checksum_file_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "file_presence",
+      "explanation": "No evidence detected for S4_checksum_files."
+    },
+    {
+      "finding_id": "S4_dataset_url:.:0:001",
+      "detector": "S4_dataset_url",
+      "detector_version": "1.7.5",
+      "pattern_id": "dataset_url_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "aggregate",
+      "explanation": "Documentation exists but no dataset URL or data source URL was detected."
+    },
+    {
+      "finding_id": "S4_model_weight_url_or_checksum:.:0:001",
+      "detector": "S4_model_weight_url_or_checksum",
+      "detector_version": "1.7.5",
+      "pattern_id": "model_weight_url_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "aggregate",
+      "explanation": "Documentation exists but no model artifact URL/checksum evidence was detected."
+    },
+    {
+      "finding_id": "S4_citation_cff:.:0:001",
+      "detector": "S4_citation_cff",
+      "detector_version": "1.7.5",
+      "pattern_id": "citation_cff_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "file_presence",
+      "explanation": "No evidence detected for S4_citation_cff."
+    },
+    {
+      "finding_id": "S4_license_restriction:.:0:001",
+      "detector": "S4_license_restriction",
+      "detector_version": "1.7.5",
+      "pattern_id": "license_restriction_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "aggregate",
+      "explanation": "License/readme/docs surfaces exist but no restriction language was detected."
+    },
+    {
+      "finding_id": "S4_cli_entrypoint:.:0:001",
+      "detector": "S4_cli_entrypoint",
+      "detector_version": "1.7.5",
+      "pattern_id": "cli_entrypoint_v1",
+      "status": "absent",
+      "evidence_status": "confirmed_missing",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "aggregate",
+      "explanation": "No package metadata or Python AST surface detected."
+    },
+    {
+      "finding_id": "S4_seed_setting:.:0:001",
+      "detector": "S4_seed_setting",
+      "detector_version": "1.7.5",
+      "pattern_id": "ast_seed_setting_stage4_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "aggregate",
+      "explanation": "No deterministic seed setting evidence detected by AST summary."
+    },
+    {
+      "finding_id": "S4_runnable_examples:.:0:001",
+      "detector": "S4_runnable_examples",
+      "detector_version": "1.7.5",
+      "pattern_id": "runnable_example_file_v1",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
+      "severity": "info",
+      "file": ".",
+      "line": 0,
+      "snippet": "",
+      "match_type": "file_presence",
+      "explanation": "No evidence detected for S4_runnable_examples."
+    }
+  ],
+  "detector_summary": {
+    "total_findings": 97,
+    "by_status": {
+      "detected": 60,
+      "not_detected": 34,
+      "not_applicable": 1,
+      "absent": 2
+    },
+    "by_detector": {
+      "S1_readme_bio_terms": {
+        "detected": 37
+      },
+      "S1_clinical_boundary": {
+        "not_detected": 1
+      },
+      "S1_H1_clinical_certainty_hype": {
+        "not_detected": 1
+      },
+      "S1_H2_regulatory_approval_hype": {
+        "not_detected": 1
+      },
+      "S1_H3_autonomous_replacement_hype": {
+        "not_detected": 1
+      },
+      "S1_H4_breakthrough_marketing_hype": {
+        "not_detected": 1
+      },
+      "S1_H5_universal_generalization_hype": {
+        "not_detected": 1
+      },
+      "S1_H6_perfect_accuracy_hype": {
+        "not_detected": 1
+      },
+      "S1_R1_limitations_section": {
+        "not_detected": 1
+      },
+      "S1_R2_regulatory_framework": {
+        "not_detected": 1
+      },
+      "S1_R2_weak_regulatory_self_assertion": {
+        "detected": 1
+      },
+      "S1_R2_unsupported_legal_or_compliance_claim": {
+        "detected": 1
+      },
+      "S1_R4_demographic_bias_boundary": {
+        "not_detected": 1
+      },
+      "S1_R5_reproducibility_provisions": {
+        "not_detected": 1
+      },
+      "S3_T1_workflow_files": {
+        "not_detected": 1
+      },
+      "S3_T2_domain_tests": {
+        "not_detected": 1
+      },
+      "S3_T3_changelog_release_hygiene": {
+        "not_detected": 1
+      },
+      "S3_T3_changelog_bugfix_evidence": {
+        "not_detected": 1
+      },
+      "S3_B1_dependency_manifest": {
+        "detected": 3
+      },
+      "S3_B1_data_source_language": {
+        "detected": 2
+      },
+      "S3_B2_bias_limitations": {
+        "not_detected": 1
+      },
+      "S3_B2_measurement_evidence": {
+        "not_detected": 1
+      },
+      "S3_B3_coi_funding": {
+        "detected": 1
+      },
+      "S2_package_bio_terms": {
+        "detected": 2
+      },
+      "R2R_D5_single_external_service_dependency": {
+        "detected": 8
+      },
+      "C1_hardcoded_credentials": {
+        "not_detected": 1
+      },
+      "C2_dependency_pinning": {
+        "not_detected": 1
+      },
+      "C3_dead_or_deprecated_patient_adjacent_paths": {
+        "not_detected": 1
+      },
+      "C4_exception_handling_clinical_adjacent_paths": {
+        "not_detected": 1
+      },
+      "BIO_smiles_surface_integrity": {
+        "not_detected": 1
+      },
+      "BIO_smiles_rdkit_validation": {
+        "not_applicable": 1
+      },
+      "BIO_smiles_parser_guard": {
+        "not_detected": 1
+      },
+      "BIO_silent_mock_fallback": {
+        "not_detected": 1
+      },
+      "BIO_trace_manifest": {
+        "not_detected": 1
+      },
+      "BIO_run_trace": {
+        "not_detected": 1
+      },
+      "S4_container_environment": {
+        "detected": 1
+      },
+      "S4_make_reproduce_target": {
+        "absent": 1
+      },
+      "S4_environment_lock_evidence": {
+        "detected": 2
+      },
+      "S4_exact_dependency_pins_or_hashes": {
+        "detected": 2
+      },
+      "S4_readme_reproducibility_section": {
+        "not_detected": 1
+      },
+      "S4_checksum_files": {
+        "not_detected": 1
+      },
+      "S4_dataset_url": {
+        "not_detected": 1
+      },
+      "S4_model_weight_url_or_checksum": {
+        "not_detected": 1
+      },
+      "S4_citation_cff": {
+        "not_detected": 1
+      },
+      "S4_license_restriction": {
+        "not_detected": 1
+      },
+      "S4_cli_entrypoint": {
+        "absent": 1
+      },
+      "S4_seed_setting": {
+        "not_detected": 1
+      },
+      "S4_runnable_examples": {
+        "not_detected": 1
+      }
+    }
+  },
+  "ast_signal_summary": {
+    "files_total": 0,
+    "files_considered": 0,
+    "files_parsed": 0,
+    "files_skipped_size": 0,
+    "syntax_errors": 0,
+    "file_limit_exceeded": false,
+    "test_functions": 0,
+    "assertion_tests": 0,
+    "public_functions": 0,
+    "docstring_functions": 0,
+    "annotated_functions": 0,
+    "seed_settings": 0,
+    "argparse_cli": false,
+    "portable_model_loading": 0,
+    "fail_open_handlers": 0,
+    "docstring_coverage": null,
+    "type_annotation_coverage": null
+  },
+  "notable_positive_evidence": [
+    "Package metadata was available for repo-local consistency checks."
+  ],
+  "notable_risks": [
+    "Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary.",
+    "Self-asserted compliance or privacy-governance claim requires independent verification.",
+    "Legal, privacy, or compliance claim appears without supporting governance or security-grounding evidence in reviewed repository sources.",
+    "Core workflow appears materially dependent on named external service providers; local or self-host claims may overstate operational independence."
+  ],
+  "file_hashes_sha256": {
+    "README.md": "199862D708D85AF0B126FD4129E5F134D6E9E804F6F8249F940F3DA16DC190AA"
+  },
+  "method": "Deterministic local CLI scan. No LLM, network, or runtime test execution is required.",
+  "measurement_basis": {
+    "stage_1": "README/package bio-domain regex; hype-claim penalties; limitation, strong regulatory-framework signals, weaker self-asserted compliance signals, disclaimer, demographic-bias, and reproducibility responsibility signals",
+    "stage_2r": "Repo-local consistency checks across README, package metadata, docs, changelog, test/CI files, and deterministic contradiction/staleness/workflow-support heuristics",
+    "stage_3_T1": ".github/workflows/ directory contains files",
+    "stage_3_T2": "tests/ directory contains bio-domain vocabulary (regex)",
+    "stage_3_T3": "CHANGELOG.md, CHANGELOG, or NEWS.md file exists; max credit requires bug-fix, patch, or security entries",
+    "stage_3_B1": "requirements.txt, pyproject.toml, or environment.yml file exists; max credit requires data-source, dataset-citation, or IRB language",
+    "stage_3_B2": "bias/limitation vocabulary present in README and docs; max credit requires quantitative measurement evidence or related test coverage",
+    "stage_3_B3": "funding/sponsor/COI vocabulary present in README, docs, or FUNDING.md (regex)",
+    "stage_4": "Deterministic replication evidence lane: containers, reproducibility targets, lock/pin/hash evidence, README reproducibility sections, dataset/model artifact references, citation metadata, license/use-scope restriction evidence, CLI/seed/example signals",
+    "ca_severity": "Clinical/diagnostic term regex match in README, docs, and package metadata",
+    "ca_taxonomy_governance": "ca-taxonomy-v1 from runtime_regex_hardcoded_in_scanner_py; reference markdown is informative, not authoritative runtime source.",
+    "C1": "Hardcoded key pattern regex (AWS AKIA*, sk-*, ghp_*, api_key=[REDACTED], excluding obvious placeholder/test values and test/example fixture contexts",
+    "C2": "Dependency-manifest-only pin check across requirements/environment/setup.cfg/pyproject dependency sections; ignores non-dependency metadata lines",
+    "C3": "Patient metadata patterns in deprecated/legacy/archive directories (regex)",
+    "C4": "AST-backed detection of executable fail-open Python exception handlers (except/pass or except/return True)",
+    "CC1": "AST scan for public functions with confidence/threshold parameter defaulting to 0 or 0.0.",
+    "CC2": "README code-block import names compared against package __all__; flags names claimed as importable but absent.",
+    "CC3": "AST scan for validate_*/check_* functions using len() but no re.match/search structure check.",
+    "airi_risk_coverage": "MIT AI Risk Repository V4_03 (airisk.mit.edu, arXiv:2408.12622) local-governed mapping: detectors cross-referenced to AIRI risk IDs through a full local registry, curated runtime bundle, and detector-mapping registry.",
+    "BIO-Diagnostics": "Deterministic evidence-only bio diagnostics: conservative SMILES surface checks, SMILES parser-guard checks, silent mock fallback detection, traceability manifest surface checks, and subprocess bio-tool run-trace heuristics.",
+    "REG-Scaffolding": "Evidence-only traceability scaffolding signals from manifest/hash/audit-log schema surfaces; intended as structural audit-readiness support rather than compliance proof.",
+    "score_cap": "Score ceiling applied when clinical-adjacent signals lack explicit disclaimer"
+  },
+  "calibration_profile": {
+    "policy_schema_version": "1",
+    "policy_version": "ca-policy-1.0",
+    "tool_version_introduced": "1.6.5",
+    "tool_version_last_validated": "1.7.5",
+    "profile_name": "default",
+    "profile_status": "authoritative_release",
+    "profile_read_mode": "mirror_only",
+    "policy_sha256": "727635bdc7c1148772d8adac2068b05c9e6ac34ec286452663279fdbc019eb26"
+  },
+  "audit_freshness": {
+    "review_after_days": 45,
+    "freshness_basis": "clinical_adjacent_short_cycle",
+    "expires_on": "2026-06-28",
+    "expired": false,
+    "anchored_commit": "100a0bf7497e62ead024df34d8c2e00ae74b8d99",
+    "hashes_available_for": [
+      "README.md"
+    ],
+    "change_triggered_reaudit_supported": true,
+    "change_triggered_reaudit_recommended_now": false,
+    "change_triggered_reaudit_reasons": [],
+    "change_triggers": [
+      "git_commit_changed",
+      "readme_or_docs_claim_surface_changed",
+      "dependency_manifest_changed",
+      "dataset_or_model_reference_changed",
+      "ci_or_reproducibility_surface_changed",
+      "changelog_or_release_hygiene_surface_changed"
+    ]
+  },
+  "regulatory_basis": {
+    "registry_version": "stem-ai-regulatory-basis-registry-v1",
+    "as_of": "May 2026",
+    "review_required": false,
+    "review_reasons": [],
+    "source_ids": [
+      "eu_ai_act_2024_1689",
+      "eu_ai_act_timeline_ec",
+      "fda_qmsr",
+      "fda_mlmd_transparency_2024",
+      "fda_pccp_2025",
+      "imdrf_samd_clinical_eval_2017",
+      "imdrf_gmlp_2025"
+    ],
+    "note": {
+      "title": "Regulatory basis note",
+      "body_line_1": "Aligned to current official source classes as of May 2026: EU AI Act (Regulation (EU) 2024/1689), FDA QMSR, FDA AI-enabled device guidance themes, and IMDRF SaMD/GMLP frameworks.",
+      "body_line_2": "This is a traceability aid, not a compliance or clearance determination."
+    }
+  },
+  "stage_traceability": {
+    "stage_1": [
+      {
+        "stage": "stage_1",
+        "requirement_id": "EU_AI_ACT_ARTICLE_13",
+        "mapping_confidence": "weak",
+        "evidence_strength": "weak",
+        "status": "signal_only",
+        "not_assessed": [
+          "IFU completeness",
+          "deployer communication workflow"
+        ],
+        "finding_refs": [
+          "R2_regulatory_framework"
+        ],
+        "source_ids": [
+          "eu_ai_act_2024_1689",
+          "fda_mlmd_transparency_2024"
+        ],
+        "note": "Boundary, intended-use, and limitation language is relevant to transparency scaffolding only."
+      },
+      {
+        "stage": "stage_1",
+        "requirement_id": "COMPLIANCE_CLAIM_GROUNDING_SIGNAL",
+        "mapping_confidence": "weak_moderate",
+        "evidence_strength": "weak",
+        "status": "signal_only",
+        "not_assessed": [
+          "formal compliance review",
+          "external certification status"
+        ],
+        "finding_refs": [
+          "S1_R2_unsupported_legal_or_compliance_claim:README.md:262:001"
+        ],
+        "source_ids": [
+          "fda_qmsr",
+          "eu_ai_act_2024_1689"
+        ],
+        "note": "Legal or compliance claims without supporting governance evidence are relevant to transparency and quality-system review, not compliance proof."
+      }
+    ],
+    "stage_2r": [
+      {
+        "stage": "stage_2r",
+        "requirement_id": "IMDRF_CLINICAL_CONTEXT_BOUNDARY_SIGNAL",
+        "mapping_confidence": "weak_moderate",
+        "evidence_strength": "moderate",
+        "status": "signal_only",
+        "not_assessed": [
+          "target-population performance",
+          "operational clinical workflow fit"
+        ],
+        "finding_refs": [
+          "R2R_D2_missing_clinical_use_boundary",
+          "R2R_D4_unsupported_workflow_claim"
+        ],
+        "source_ids": [
+          "imdrf_samd_clinical_eval_2017"
+        ],
+        "note": "Repository-local contradiction and boundary signals are relevant to clinical-context traceability, not clinical validation."
+      }
+    ],
+    "stage_3": [
+      {
+        "stage": "stage_3",
+        "requirement_id": "EU_AI_ACT_ARTICLE_10",
+        "mapping_confidence": "weak",
+        "evidence_strength": "weak",
+        "status": "signal_only",
+        "not_assessed": [
+          "measurement correctness",
+          "dataset adequacy",
+          "regulator adequacy"
+        ],
+        "finding_refs": [
+          "B1_data_provenance_controls"
+        ],
+        "source_ids": [
+          "eu_ai_act_2024_1689",
+          "imdrf_samd_clinical_eval_2017"
+        ],
+        "note": "Provenance and bias signals are relevant to data-governance review, but do not verify execution quality."
+      }
+    ],
+    "stage_4": [
+      {
+        "stage": "stage_4",
+        "requirement_id": "EU_AI_ACT_ARTICLE_12",
+        "mapping_confidence": "moderate",
+        "evidence_strength": "moderate",
+        "status": "partially_aligned",
+        "not_assessed": [
+          "deploy-time event logging",
+          "runtime event completeness"
+        ],
+        "finding_refs": [
+          "S4_environment_lock_evidence",
+          "S4_container_environment"
+        ],
+        "source_ids": [
+          "eu_ai_act_2024_1689",
+          "fda_qmsr",
+          "fda_pccp_2025"
+        ],
+        "note": "Reproducibility and trace manifests support record-keeping scaffolding, not operational logging completeness."
+      }
+    ],
+    "bio_diagnostics": []
+  },
+  "regulatory_traceability": {
+    "version": "stem-ai-reg-trace-v1.6",
+    "summary": "Structural signals partially align with traceability scaffolding. This remains a pre-audit traceability aid, not a compliance determination.",
+    "items": [
+      {
+        "stage": "stage_1",
+        "requirement_id": "EU_AI_ACT_ARTICLE_13",
+        "mapping_confidence": "weak",
+        "evidence_strength": "weak",
+        "status": "signal_only",
+        "not_assessed": [
+          "IFU completeness",
+          "deployer communication workflow"
+        ],
+        "finding_refs": [
+          "R2_regulatory_framework"
+        ],
+        "source_ids": [
+          "eu_ai_act_2024_1689",
+          "fda_mlmd_transparency_2024"
+        ],
+        "note": "Boundary, intended-use, and limitation language is relevant to transparency scaffolding only."
+      },
+      {
+        "stage": "stage_1",
+        "requirement_id": "COMPLIANCE_CLAIM_GROUNDING_SIGNAL",
+        "mapping_confidence": "weak_moderate",
+        "evidence_strength": "weak",
+        "status": "signal_only",
+        "not_assessed": [
+          "formal compliance review",
+          "external certification status"
+        ],
+        "finding_refs": [
+          "S1_R2_unsupported_legal_or_compliance_claim:README.md:262:001"
+        ],
+        "source_ids": [
+          "fda_qmsr",
+          "eu_ai_act_2024_1689"
+        ],
+        "note": "Legal or compliance claims without supporting governance evidence are relevant to transparency and quality-system review, not compliance proof."
+      },
+      {
+        "stage": "stage_2r",
+        "requirement_id": "IMDRF_CLINICAL_CONTEXT_BOUNDARY_SIGNAL",
+        "mapping_confidence": "weak_moderate",
+        "evidence_strength": "moderate",
+        "status": "signal_only",
+        "not_assessed": [
+          "target-population performance",
+          "operational clinical workflow fit"
+        ],
+        "finding_refs": [
+          "R2R_D2_missing_clinical_use_boundary",
+          "R2R_D4_unsupported_workflow_claim"
+        ],
+        "source_ids": [
+          "imdrf_samd_clinical_eval_2017"
+        ],
+        "note": "Repository-local contradiction and boundary signals are relevant to clinical-context traceability, not clinical validation."
+      },
+      {
+        "stage": "stage_3",
+        "requirement_id": "EU_AI_ACT_ARTICLE_10",
+        "mapping_confidence": "weak",
+        "evidence_strength": "weak",
+        "status": "signal_only",
+        "not_assessed": [
+          "measurement correctness",
+          "dataset adequacy",
+          "regulator adequacy"
+        ],
+        "finding_refs": [
+          "B1_data_provenance_controls"
+        ],
+        "source_ids": [
+          "eu_ai_act_2024_1689",
+          "imdrf_samd_clinical_eval_2017"
+        ],
+        "note": "Provenance and bias signals are relevant to data-governance review, but do not verify execution quality."
+      },
+      {
+        "stage": "stage_4",
+        "requirement_id": "EU_AI_ACT_ARTICLE_12",
+        "mapping_confidence": "moderate",
+        "evidence_strength": "moderate",
+        "status": "partially_aligned",
+        "not_assessed": [
+          "deploy-time event logging",
+          "runtime event completeness"
+        ],
+        "finding_refs": [
+          "S4_environment_lock_evidence",
+          "S4_container_environment"
+        ],
+        "source_ids": [
+          "eu_ai_act_2024_1689",
+          "fda_qmsr",
+          "fda_pccp_2025"
+        ],
+        "note": "Reproducibility and trace manifests support record-keeping scaffolding, not operational logging completeness."
+      }
+    ]
+  },
+  "reasoning_model": {
+    "version": "stem-bio-ai-reasoning-v1.3.2",
+    "policy": {
+      "mode": "diagnostic_only",
+      "final_score_override": false,
+      "uses_ai": false,
+      "weights": "uncalibrated_initial_priors_pending_benchmark_calibration"
+    },
+    "evidence_budget": {
+      "confidence": 0.48,
+      "required_bits": 0.9434,
+      "observed_bits": 8.6439,
+      "unique_token_count": 399,
+      "deficit": -7.7004,
+      "budget_deficit_max": 1.0,
+      "flagged": false,
+      "status": "supported",
+      "basis": "diagnostic_only_uncalibrated_initial_prior"
+    },
+    "confidence_envelope": {
+      "confidence": 0.48,
+      "evidence_count": 97,
+      "lower": 0.4295,
+      "upper": 0.5305,
+      "margin": 0.0505,
+      "basis": "diagnostic_only_uncalibrated_initial_prior"
+    },
+    "lane_coherence": {
+      "stage_scores": {
+        "stage_1_readme_evidence": 0.75,
+        "stage_2_repo_local_consistency": 0.4,
+        "stage_3_code_bio": 0.25,
+        "stage_4_replication": 0.3
+      },
+      "pairs": [
+        {
+          "pair": "stage_1_readme_evidence:stage_3_code_bio",
+          "left": 0.75,
+          "right": 0.25,
+          "coherence": 0.5
+        },
+        {
+          "pair": "stage_3_code_bio:stage_4_replication",
+          "left": 0.25,
+          "right": 0.3,
+          "coherence": 0.95
+        }
+      ],
+      "overall": 0.725,
+      "status": "heuristic_mixed",
+      "basis": "diagnostic_only_uncalibrated_initial_prior"
+    },
+    "uncertainty_budget": {
+      "stage_std": 0.1953,
+      "manual_review_required_ratio": 0.0,
+      "error_ratio": 0.0,
+      "uncertainty": 0.2789,
+      "status": "review_advised",
+      "basis": "diagnostic_only_uncalibrated_initial_prior"
+    },
+    "evidence_risk_gate": {
+      "components": {
+        "missing_required_boundary_ratio": 1.0,
+        "contradiction_ratio": 0.275,
+        "manual_review_required_ratio": 0.0,
+        "parse_error_ratio": 0.0
+      },
+      "evidence_risk": 0.4825,
+      "risk_gate": 0.6,
+      "risk_gate_factor": 0.1958,
+      "status": "within_heuristic_gate",
+      "basis": "diagnostic_only_uncalibrated_initial_prior"
+    },
+    "benchmark_alignment": null
+  }
+}
