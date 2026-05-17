@@ -3,7 +3,7 @@
 **Target:** `yorkeccak/bio`
 **Execution Mode:** `LOCAL_ANALYSIS`
 **Calibration Profile:** `default` (`ca-policy-1.0`, `mirror_only`, `authoritative_release`)
-**Calibration Effect:** mirror-only in 1.7.5 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
+**Calibration Effect:** mirror-only in 1.7.7 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
 **Final Score:** **48 / 100**
 **Formal Tier:** **T1 Quarantine**
 **Use Scope:** Exploratory review only; no patient-adjacent use.
@@ -25,7 +25,7 @@
 ## Audit Freshness
 
 **Review After:** **45 days**
-**Expires On:** `2026-06-29`
+**Expires On:** `2026-06-30`
 **Change-triggered re-audit recommended now:** `False`
 **Current re-audit reasons:** `none`
 **Trigger examples:** `git_commit_changed, readme_or_docs_claim_surface_changed, dependency_manifest_changed, dataset_or_model_reference_changed`
@@ -62,15 +62,15 @@ Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_p
 
 ## AIRI Coverage
 
-**Covered Risks:** **8 / 32**
-**Coverage Rate:** `0.250`
+**Covered Risks:** **7 / 32**
+**Coverage Rate:** `0.219`
 **Bundle Scope:** `curated_medical_clinical_subset`
 **Upstream Snapshot:** `2026-04-23`
 
 **Examples of Covered AIRI Risks**
-- `24.01.03` — Safe exploration problem with widely deployed AI assistants (covered by: C4_exception_handling_clinical_adjacent_paths)
-- `24.04.01` — Physical and Psychological Harms (covered by: C2_dependency_pinning)
-- `33.01.05` — Privacy and security (covered by: C2_dependency_pinning)
+- `24.01.03` — Safe exploration problem with widely deployed AI assistants (covered by: C5_compliance_boundary_integrity; why: C5_compliance_boundary_integrity: Unsupported legal/compliance claim surfaced in boundary-integrity lane.)
+- `24.04.01` — Physical and Psychological Harms (covered by: C2_dependency_pinning; why: C2_dependency_pinning: External operational dependency signal surfaced in code-integrity lane.)
+- `33.01.05` — Privacy and security (covered by: C2_dependency_pinning; why: C2_dependency_pinning: External operational dependency signal surfaced in code-integrity lane.)
 
 **Known Gaps In Bundle**
 - `65.03.03` — Reidentification
@@ -79,7 +79,8 @@ Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_p
 - **C1_hardcoded_credentials:** PASS — No direct credential patterns detected by local CLI scan.
 - **C2_dependency_pinning:** WARN — External operational dependency signal surfaced in code-integrity lane.
 - **C3_dead_or_deprecated_patient_adjacent_paths:** PASS — No deprecated patient-adjacent metadata patterns detected.
-- **C4_exception_handling_clinical_adjacent_paths:** WARN — Unsupported legal/compliance claim surfaced in boundary-integrity lane.
+- **C4_exception_handling_clinical_adjacent_paths:** PASS — No executable fail-open exception handler detected.
+- **C5_compliance_boundary_integrity:** WARN — Unsupported legal/compliance claim surfaced in boundary-integrity lane.
 
 ## Bio Deterministic Diagnostics
 
@@ -105,18 +106,18 @@ Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_p
 - **R3_clinical_disclaimer:** -5 — CA-INDIRECT surface lacks explicit non-clinical or non-diagnostic boundary.
 
 ## Stage 2R Evidence
-- **baseline:** 60 — Non-nascent local repository baseline.
-- **R2R_1_readme_package_code_alignment:** 15 — README has domain overlap with package metadata or entry points.
-- **R2R_D2_missing_clinical_use_boundary:** -20 — Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary.
-- **R2R_D4_unsupported_workflow_claim:** -15 — README/docs claim runnable workflow, CLI, test, or demo support without matching local support surfaces.
+- **baseline:** 60 — Non-nascent local repository baseline. `[detector=stage2r_baseline | basis=repository has sufficient local structure to enter repo-local consistency review]`
+- **R2R_1_readme_package_code_alignment:** 15 — README has domain overlap with package metadata or entry points. `[detector=R2R_1_readme_package_code_alignment | basis=shared bio-domain terms detected across README and package metadata]`
+- **R2R_D2_missing_clinical_use_boundary:** -20 — Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary. `[detector=R2R_D2_missing_clinical_use_boundary | basis=clinical_adjacent=True and explicit non-clinical boundary was not detected]`
+- **R2R_D4_unsupported_workflow_claim:** -15 — README/docs claim runnable workflow, CLI, test, or demo support without matching local support surfaces. `[detector=R2R_D4_unsupported_workflow_claim | basis=workflow/demo/CLI claims detected while workflow, tests, or local support entrypoints are absent]`
 
 ## Stage 3 Evidence
-- **T1_CI_CD:** 0 / 15 — No workflow files detected.
-- **T2_domain_tests:** 0 / 15 — No tests detected.
-- **T3_changelog_release_hygiene:** 0 / 15 — No changelog detected.
-- **B1_data_provenance_controls:** 15 / 15 — Dependency manifest detected with data source, IRB, or dataset citation language.
-- **B2_bias_limitations:** 0 / 15 — No bias/limitations language detected by local CLI scan.
-- **B3_coi_funding:** 5 / 5 — COI, funding, sponsor, or acknowledgement language detected.
+- **T1_CI_CD:** 0 / 15 — No workflow files detected. `[detector=S3_T1_workflow_files | basis=no workflow files present under .github/workflows/]`
+- **T2_domain_tests:** 0 / 15 — No tests detected. `[detector=S3_T2_domain_tests | basis=no tests surface detected]`
+- **T3_changelog_release_hygiene:** 0 / 15 — No changelog detected. `[detector=S3_T3_changelog_release_hygiene | basis=CHANGELOG/NEWS presence plus bug-fix or patch-entry detection]`
+- **B1_data_provenance_controls:** 15 / 15 — Dependency manifest detected with data source, IRB, or dataset citation language. `[detector=S3_B1_dependency_manifest | basis=dependency or lock manifest presence plus data-source, dataset, or IRB language review]`
+- **B2_bias_limitations:** 0 / 15 — No bias/limitations language detected by local CLI scan. `[detector=S3_B2_bias_limitations | basis=bias/limitations vocabulary with optional measurement-evidence escalation]`
+- **B3_coi_funding:** 5 / 5 — COI, funding, sponsor, or acknowledgement language detected. `[detector=S3_B3_coi_funding | basis=COI/funding/sponsor language review across README, docs, FUNDING, CITATION, and AUTHORS surfaces]`
 - **stage_3_raw_total:** 20 / 80 — Raw rubric total before normalization to 100.
 
 ## Stage 4 Replication Evidence

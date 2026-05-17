@@ -1,7 +1,7 @@
 STEM BIO-AI Explain Report
 Target  : yorkeccak/bio
 Policy  : default [ca-policy-1.0; mirror_only; authoritative_release]
-Policy Mode: mirror-only in 1.7.5 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
+Policy Mode: mirror-only in 1.7.7 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
 Score   : 48 / 100  (T1 Quarantine)
 Replic  : 30 / 100  (R1)
 ========================================================================
@@ -848,16 +848,16 @@ Regulatory Traceability Assistant
 ========================================================================
 AIRI Coverage
 
-  covered_count                  8
+  covered_count                  7
   detector_scope_total           32
-  coverage_rate                  0.25
+  coverage_rate                  0.219
   bundle_scope                   curated_medical_clinical_subset
   upstream_snapshot              2026-04-23
 
   covered examples:
-    - 24.01.03 | Safe exploration problem with widely deployed AI assistants | covered_by=C4_exception_handling_clinical_adjacent_paths
-    - 24.04.01 | Physical and Psychological Harms | covered_by=C2_dependency_pinning
-    - 33.01.05 | Privacy and security | covered_by=C2_dependency_pinning
+    - 24.01.03 | Safe exploration problem with widely deployed AI assistants | covered_by=C5_compliance_boundary_integrity | why=C5_compliance_boundary_integrity: Unsupported legal/compliance claim surfaced in boundary-integrity lane.
+    - 24.04.01 | Physical and Psychological Harms | covered_by=C2_dependency_pinning | why=C2_dependency_pinning: External operational dependency signal surfaced in code-integrity lane.
+    - 33.01.05 | Privacy and security | covered_by=C2_dependency_pinning | why=C2_dependency_pinning: External operational dependency signal surfaced in code-integrity lane.
 
   known gaps in bundle:
     - 65.03.03 | Reidentification
@@ -867,7 +867,7 @@ AIRI Coverage
 Audit Freshness
 
   review_after_days               45
-  expires_on                      2026-06-29
+  expires_on                      2026-06-30
   freshness_basis                 clinical_adjacent_short_cycle
   change_triggered_reaudit_now    False
   change_triggered_reasons        none

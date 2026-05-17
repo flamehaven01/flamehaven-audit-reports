@@ -2,8 +2,8 @@
 
 - Tool: `STEM-BIO-AI`
 - Target: `yorkeccak/bio`
-- Audit date: `2026-05-15`
-- Artifact refresh: `bio_postpatch_v7` aligned output surface
+- Audit date: `2026-05-16`
+- Artifact refresh: `verify_v177_formats_bio_fix2` aligned output surface
 
 Files:
 - [Interactive HTML report](./report.html)

@@ -3,9 +3,9 @@
 
 **Published:** May 2026  
 **Evaluation Target:** [yorkeccak/bio](https://github.com/yorkeccak/bio)  
-**Evaluation Engine:** STEM-BIO-AI v1.7.5  
+**Evaluation Engine:** STEM-BIO-AI v1.7.7  
 **Execution Mode:** LOCAL_ANALYSIS  
-**Audit Expires:** 2026-06-29 (45-day freshness window)
+**Audit Expires:** 2026-06-30 (45-day freshness window)
 
 ---
 
@@ -17,9 +17,9 @@
 | Formal Tier | **T1 Quarantine** |
 | Use Scope | Exploratory review only. No patient-adjacent use. |
 | Replication Tier | **R1 (Stage 4: 30/100)** |
-| AIRI Coverage | **8 / 32** |
+| AIRI Coverage | **7 / 32** |
 
-The `T1 Quarantine` result is justified. The repository presents a strong bio-facing README and a recognizable data-source story, but it still lacks the engineering, governance, and deployment-boundary evidence needed for patient-adjacent or regulated use. The most important shift in the `v7` output is not the final score itself. It is that the report now surfaces external-service dependency and unsupported legal/compliance claims more explicitly, and no longer presents `Code Integrity` or `AIRI` in a way that looks artificially clean.
+The `T1 Quarantine` result is justified. The repository presents a strong bio-facing README and a recognizable data-source story, but it still lacks the engineering, governance, and deployment-boundary evidence needed for patient-adjacent or regulated use. The most important shift in the current `1.7.7` output is not the final score itself. It is that the report now surfaces external-service dependency and unsupported legal/compliance claims more explicitly, and no longer presents `Code Integrity` or `AIRI` in a way that looks artificially clean.
 
 ---
 
@@ -119,7 +119,7 @@ So `30/100` is an improvement, but not a strong reproducibility posture.
 
 ## Top Risks
 
-The current `v7` report surfaces six top risks. Four are structural and two are mirrored from code-integrity warning lanes.
+The current `1.7.7` report surfaces six top risks. Four are structural and two are mirrored from code-integrity warning lanes.
 
 **Risk 1: Clinical-adjacent surfaces exist without an explicit non-diagnostic or non-clinical boundary.**  
 This remains the most important governance issue. The tool works close to biomedical and clinical information flows, but the repository does not state a firm intended-use boundary that rules out diagnosis, treatment, or patient-care use.
@@ -131,13 +131,13 @@ The repository uses compliance-adjacent language in the README. The scanner now 
 This is broader than the HIPAA phrase itself. The scanner is now explicitly surfacing unsupported legal/compliance claims in the report layer and regulatory traceability layer.
 
 **Risk 4: Core workflow appears materially dependent on named external service providers; local or self-host claims may overstate operational independence.**  
-This is the clearest new structural warning in the `v7` artifact. The repository depends on named external services such as Valyu and Daytona. That dependency is now visible as a first-class risk rather than being buried in config files or documentation assumptions.
+This is the clearest structural warning in the current artifact. The repository depends on named external services such as Valyu and Daytona. That dependency is now visible as a first-class risk rather than being buried in config files or documentation assumptions.
 
 **Risk 5: C2_dependency_pinning: WARN.**  
 In this report, `C2` no longer reads as “all clear.” It now doubles as a code-integrity lane for external operational dependency risk when a named provider becomes a material single point of reliance.
 
-**Risk 6: C4_exception_handling_clinical_adjacent_paths: WARN.**  
-The current `C4` warning is not about a literal `except: pass` pattern. It is being used here as a boundary-integrity lane for unsupported legal/compliance claims and clinical-adjacent governance concerns.
+**Risk 6: C5_compliance_boundary_integrity: WARN.**  
+In `1.7.7`, compliance and clinical-boundary integrity were split away from the original exception-handling lane. Unsupported legal/compliance claims now surface under `C5`, while `C4` is reserved for actual executable fail-open exception patterns.
 
 ---
 
@@ -211,20 +211,18 @@ In STEM-BIO-AI, AIRI is used as a **bounded risk-vocabulary layer** that connect
 The most important difference from older outputs is that AIRI is no longer `0/31`.
 
 Current result:
-- **Covered Risks:** `8 / 32`
-- **Coverage Rate:** `0.250`
+- **Covered Risks:** `7 / 32`
+- **Coverage Rate:** `0.219`
 
 Examples now surfaced:
 - `24.01.03` Safe exploration problem with widely deployed AI assistants
 - `24.04.01` Physical and Psychological Harms
 - `33.01.05` Privacy and security
 - `39.25.00` Verifiability
-- `60.02.01` Reliability issues
 - `69.01.00` False information
-- `70.01.02` Accidental harm
 - `72.04.02` Market Concentration and Infrastructure Dependencies
 
-This matters because the earlier `0/31` output could be misread as “no relevant AIRI risk signal.” The current report is better aligned with the actual findings. Unsupported compliance claims, dependency concentration, and boundary weaknesses now connect to a broader AIRI-backed risk vocabulary.
+This matters because the earlier `0/31` output could be misread as “no relevant AIRI risk signal.” The current report is better aligned with the actual findings. Unsupported compliance claims, dependency concentration, and boundary weaknesses now connect to a broader AIRI-backed risk vocabulary, and the report now shows bounded `why mapped` reasoning for covered AIRI rows.
 
 Important boundary:
 - these AIRI links remain bounded by detector mappings,
@@ -241,20 +239,21 @@ Those gap notes are still important because they point to plausible failure terr
 
 ## Code Integrity
 
-The biggest interpretive improvement in the `v7` report is that `Code Integrity` no longer looks falsely clean.
+The biggest interpretive improvement in the `1.7.7` report is that `Code Integrity` no longer looks falsely clean.
 
 | Check | Result |
 |---|---|
 | C1 Hardcoded credentials | PASS |
 | C2 Dependency pinning / external operational dependency lane | WARN |
 | C3 Deprecated patient-adjacent paths | PASS |
-| C4 Boundary-integrity / unsupported compliance claim lane | WARN |
+| C4 Fail-open exception handling | PASS |
+| C5 Compliance / boundary integrity | WARN |
 
 This is much closer to what a reviewer would intuitively expect after reading the rest of the report.
 
 Two cautions still matter:
 1. `PASS` does not mean strong overall engineering quality. It means the specific detector lane did not surface a mapped problem.
-2. Some architectural issues remain outside direct static detection. For example, design-level fail-open or mock-auth behavior may still require a dedicated detector rather than relying on current `C4` logic.
+2. Some architectural issues remain outside direct static detection. For example, design-level fail-open or mock-auth behavior may still require a dedicated detector rather than relying on current `C4` and `C5` logic.
 
 ---
 
