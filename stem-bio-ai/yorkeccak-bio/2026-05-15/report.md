@@ -3,7 +3,7 @@
 **Target:** `yorkeccak/bio`
 **Execution Mode:** `LOCAL_ANALYSIS`
 **Calibration Profile:** `default` (`ca-policy-1.0`, `mirror_only`, `authoritative_release`)
-**Calibration Effect:** mirror-only in 1.7.7 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
+**Calibration Effect:** mirror-only in 1.7.8 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
 **Final Score:** **48 / 100**
 **Formal Tier:** **T1 Quarantine**
 **Use Scope:** Exploratory review only; no patient-adjacent use.
@@ -25,14 +25,14 @@
 ## Audit Freshness
 
 **Review After:** **45 days**
-**Expires On:** `2026-06-30`
+**Expires On:** `2026-07-02`
 **Change-triggered re-audit recommended now:** `False`
 **Current re-audit reasons:** `none`
 **Trigger examples:** `git_commit_changed, readme_or_docs_claim_surface_changed, dependency_manifest_changed, dataset_or_model_reference_changed`
 
 ## Reasoning Diagnostics
 
-Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_priors_pending_benchmark_calibration); lane consistency `heuristic_mixed` (0.725), uncertainty band `review_advised` (0.2789), risk heuristic `within_heuristic_gate` (0.4825), confidence envelope 0.4295-0.5305. This heuristic layer does not override the final score.
+Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_priors_pending_benchmark_calibration); lane consistency `heuristic_mixed` (0.725), uncertainty band `review_advised` (0.2789), risk heuristic `within_heuristic_gate` (0.4825), confidence envelope 0.431-0.529. This heuristic layer does not override the final score.
 
 ## Regulatory Traceability Assistant
 
@@ -81,11 +81,12 @@ Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_p
 - **C3_dead_or_deprecated_patient_adjacent_paths:** PASS — No deprecated patient-adjacent metadata patterns detected.
 - **C4_exception_handling_clinical_adjacent_paths:** PASS — No executable fail-open exception handler detected.
 - **C5_compliance_boundary_integrity:** WARN — Unsupported legal/compliance claim surfaced in boundary-integrity lane.
+- **C6_mock_auth_or_fail_open_boundary:** WARN — Mock-auth or auto-login boundary surfaced in code-integrity lane.
 
 ## Bio Deterministic Diagnostics
 
 - **SMILES Surface Integrity:** not_detected=1 — No malformed or suspicious SMILES-like strings detected by conservative surface checks.
-- **SMILES RDKit Validation:** not_applicable=1 — RDKit optional validation lane unavailable in current environment.
+- **SMILES RDKit Validation:** not_detected=1 — RDKit optional validation lane not exercised because no SMILES-like candidates were detected.
 - **SMILES Parser Guard:** not_detected=1 — No missing None/invalid guards detected after SMILES parser calls.
 - **Silent Mock Fallback:** not_detected=1 — No silent mock or simulated-data fallback patterns detected in production code paths.
 - **Traceability Manifest Surface:** not_detected=1 — No traceability manifest or runtime audit-log schema surface detected.
@@ -97,47 +98,6 @@ Diagnostic-only heuristic `stem-bio-ai-reasoning-v1.3.2` (uncalibrated_initial_p
 - Legal, privacy, or compliance claim appears without supporting governance or security-grounding evidence in reviewed repository sources.
 - Core workflow appears materially dependent on named external service providers; local or self-host claims may overstate operational independence.
 - C2_dependency_pinning: WARN
-
-## Stage 1 Evidence
-- **baseline:** 60 — Non-nascent README evidence baseline.
-- **S1_domain_readme:** 10 — README exposes bio/medical domain vocabulary.
-- **S1_domain_package:** 5 — Package metadata exposes bio/medical domain vocabulary.
-- **R2_regulatory_framework:** 5 — Self-asserted privacy/compliance language detected without stronger regulatory-framework evidence.
-- **R3_clinical_disclaimer:** -5 — CA-INDIRECT surface lacks explicit non-clinical or non-diagnostic boundary.
-
-## Stage 2R Evidence
-- **baseline:** 60 — Non-nascent local repository baseline. `[detector=stage2r_baseline | basis=repository has sufficient local structure to enter repo-local consistency review]`
-- **R2R_1_readme_package_code_alignment:** 15 — README has domain overlap with package metadata or entry points. `[detector=R2R_1_readme_package_code_alignment | basis=shared bio-domain terms detected across README and package metadata]`
-- **R2R_D2_missing_clinical_use_boundary:** -20 — Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary. `[detector=R2R_D2_missing_clinical_use_boundary | basis=clinical_adjacent=True and explicit non-clinical boundary was not detected]`
-- **R2R_D4_unsupported_workflow_claim:** -15 — README/docs claim runnable workflow, CLI, test, or demo support without matching local support surfaces. `[detector=R2R_D4_unsupported_workflow_claim | basis=workflow/demo/CLI claims detected while workflow, tests, or local support entrypoints are absent]`
-
-## Stage 3 Evidence
-- **T1_CI_CD:** 0 / 15 — No workflow files detected. `[detector=S3_T1_workflow_files | basis=no workflow files present under .github/workflows/]`
-- **T2_domain_tests:** 0 / 15 — No tests detected. `[detector=S3_T2_domain_tests | basis=no tests surface detected]`
-- **T3_changelog_release_hygiene:** 0 / 15 — No changelog detected. `[detector=S3_T3_changelog_release_hygiene | basis=CHANGELOG/NEWS presence plus bug-fix or patch-entry detection]`
-- **B1_data_provenance_controls:** 15 / 15 — Dependency manifest detected with data source, IRB, or dataset citation language. `[detector=S3_B1_dependency_manifest | basis=dependency or lock manifest presence plus data-source, dataset, or IRB language review]`
-- **B2_bias_limitations:** 0 / 15 — No bias/limitations language detected by local CLI scan. `[detector=S3_B2_bias_limitations | basis=bias/limitations vocabulary with optional measurement-evidence escalation]`
-- **B3_coi_funding:** 5 / 5 — COI, funding, sponsor, or acknowledgement language detected. `[detector=S3_B3_coi_funding | basis=COI/funding/sponsor language review across README, docs, FUNDING, CITATION, and AUTHORS surfaces]`
-- **stage_3_raw_total:** 20 / 80 — Raw rubric total before normalization to 100.
-
-## Stage 4 Replication Evidence
-- **S4_container_environment:** 10 / 10 — Container or compose file exists.
-- **S4_make_reproduce_target:** 0 / 10 — No Makefile detected.
-- **S4_environment_lock_evidence:** 10 / 10 — Environment, dependency, or lock manifest detected.
-- **S4_exact_dependency_pins_or_hashes:** 10 / 10 — Exact dependency pin or hash evidence detected.
-- **S4_readme_reproducibility_section:** 0 / 10 — README exists but no reproducibility or replication section heading was detected.
-- **S4_checksum_files:** 0 / 10 — No evidence detected for S4_checksum_files.
-- **S4_dataset_url:** 0 / 10 — Documentation exists but no dataset URL or data source URL was detected.
-- **S4_model_weight_url_or_checksum:** 0 / 10 — Documentation exists but no model artifact URL/checksum evidence was detected.
-- **S4_citation_cff:** 0 / 5 — No evidence detected for S4_citation_cff.
-- **S4_license_restriction:** 0 / 0 — No license/use restriction language detected.
-- **S4_cli_entrypoint:** 0 / 5 — No package metadata or Python AST surface detected.
-- **S4_seed_setting:** 0 / 5 — No deterministic seed setting detected.
-- **S4_runnable_examples:** 0 / 5 — No evidence detected for S4_runnable_examples.
-- **stage_4_raw_total:** 30 / 100 — Raw Stage 4 rubric total. Stage 4 is reported separately and does not alter final score.
-
-## Method Boundary
-Deterministic local CLI scan. No LLM, network, or runtime test execution is required.
 
 ## Disclaimer
 This is an evidence-surface pre-screen, not clinical certification, regulatory clearance, or medical advice.

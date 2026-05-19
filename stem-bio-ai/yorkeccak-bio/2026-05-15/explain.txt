@@ -1,7 +1,7 @@
 STEM BIO-AI Explain Report
 Target  : yorkeccak/bio
 Policy  : default [ca-policy-1.0; mirror_only; authoritative_release]
-Policy Mode: mirror-only in 1.7.7 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
+Policy Mode: mirror-only in 1.7.8 — selected profile metadata is surfaced in artifacts, but authoritative scan scoring still follows deterministic runtime constants. Preview-only posture changes, including Stage 4 replication emphasis, do not change the formal score until a future read-through phase. Use `stem policy simulate` to preview governed score deltas and posture changes.
 Score   : 48 / 100  (T1 Quarantine)
 Replic  : 30 / 100  (R1)
 ========================================================================
@@ -609,6 +609,60 @@ R2R_D5_single_external_service_dependency  [DETECTED]  (8 findings)
          line_role      : local_or_self_host_claim
          provider_count      : 2
 
+C6_mock_auth_or_fail_open_boundary  [DETECTED]  (6 findings)
+  [001]  README.md:51
+         finding_id: C6_mock_auth_or_fail_open_boundary:README.md:51:001
+         pattern : mock_auth_fail_open_boundary_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- **No authentication required** - Auto-login as dev user"
+         reason  : Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.
+         match      : No authentication required
+         local_claim_context      : True
+  [002]  README.md:110
+         finding_id: C6_mock_auth_or_fail_open_boundary:README.md:110:002
+         pattern : mock_auth_fail_open_boundary_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "You'll be automatically logged in as `dev@localhost` with full access to all features."
+         reason  : Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.
+         match      : dev@localhost
+         local_claim_context      : True
+  [003]  README.md:134
+         finding_id: C6_mock_auth_or_fail_open_boundary:README.md:134:003
+         pattern : mock_auth_fail_open_boundary_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "2. **Mock Authentication**"
+         reason  : Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.
+         match      : Mock Authentication
+         local_claim_context      : True
+  [004]  README.md:135
+         finding_id: C6_mock_auth_or_fail_open_boundary:README.md:135:004
+         pattern : mock_auth_fail_open_boundary_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "- Auto-login as dev user (`dev@localhost`)"
+         reason  : Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.
+         match      : Auto-login
+         local_claim_context      : True
+  [001]  .env.example:11
+         finding_id: C6_mock_auth_or_fail_open_boundary:.env.example:11:001
+         pattern : mock_auth_fail_open_boundary_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "# Set to 'self-hosted' or 'valyu'"
+         reason  : Local or self-host claims coexist with mock-auth or auto-login boundary signals.
+         line_role      : local_or_self_host_claim
+  [002]  .env.example:12
+         finding_id: C6_mock_auth_or_fail_open_boundary:.env.example:12:002
+         pattern : mock_auth_fail_open_boundary_v1
+         evidence: confirmed_present
+         conf    : high
+         snippet : "# self-hosted = no auth, local SQLite, unlimited queries, Ollama/LM Studio support"
+         reason  : Local or self-host claims coexist with mock-auth or auto-login boundary signals.
+         line_role      : local_or_self_host_claim
+
 C1_hardcoded_credentials  [NOT_DETECTED]  (1 finding)
   [001]  (repository)
          finding_id: C1_hardcoded_credentials:.:0:001
@@ -649,13 +703,13 @@ BIO_smiles_surface_integrity  [NOT_DETECTED]  (1 finding)
          conf    : medium
          reason  : No malformed or suspicious SMILES-like strings detected by conservative surface checks.
 
-BIO_smiles_rdkit_validation  [NOT_APPLICABLE]  (1 finding)
+BIO_smiles_rdkit_validation  [NOT_DETECTED]  (1 finding)
   [001]  (repository)
          finding_id: BIO_smiles_rdkit_validation:.:0:001
          pattern : bio_smiles_rdkit_invalid_v1
-         evidence: not_applicable
-         conf    : high
-         reason  : RDKit optional validation lane unavailable in current environment.
+         evidence: not_found_in_reviewed_sources
+         conf    : medium
+         reason  : RDKit optional validation lane not exercised because no SMILES-like candidates were detected.
          lane      : A1_optional_rdkit
 
 BIO_smiles_parser_guard  [NOT_DETECTED]  (1 finding)
@@ -815,7 +869,7 @@ S4_runnable_examples  [NOT_DETECTED]  (1 finding)
 Bio Deterministic Diagnostics
 
   SMILES Surface Integrity           not_detected=1
-  SMILES RDKit Validation            not_applicable=1
+  SMILES RDKit Validation            not_detected=1
   SMILES Parser Guard                not_detected=1
   Silent Mock Fallback               not_detected=1
   Traceability Manifest Surface      not_detected=1
@@ -867,7 +921,7 @@ AIRI Coverage
 Audit Freshness
 
   review_after_days               45
-  expires_on                      2026-06-30
+  expires_on                      2026-07-02
   freshness_basis                 clinical_adjacent_short_cycle
   change_triggered_reaudit_now    False
   change_triggered_reasons        none

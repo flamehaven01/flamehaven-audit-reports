@@ -1,7 +1,7 @@
 {
   "schema_version": "stem-ai-local-cli-result-v1.6",
-  "stem_ai_version": "1.7.7",
-  "generated_at_local": "2026-05-16",
+  "stem_ai_version": "1.7.8",
+  "generated_at_local": "2026-05-18",
   "execution_mode": "LOCAL_ANALYSIS",
   "target": {
     "name": "yorkeccak/bio",
@@ -248,6 +248,16 @@
         "README.md:262 - HIPAA-compliant architecture (when self-hosted)",
         "Clinical-adjacent surfaces exist without an explicit non-diagnostic/non-clinical boundary."
       ]
+    },
+    "C6_mock_auth_or_fail_open_boundary": {
+      "status": "WARN",
+      "evidence": [
+        "Mock-auth or auto-login boundary surfaced in code-integrity lane.",
+        "README.md:51 - **No authentication required** - Auto-login as dev user",
+        "README.md:110 You'll be automatically logged in as `dev@localhost` with full access to all features.",
+        "README.md:134 2. **Mock Authentication**",
+        "README.md:135 - Auto-login as dev user (`dev@localhost`)"
+      ]
     }
   },
   "code_contract": {
@@ -280,6 +290,7 @@
     "detectors_triggered": [
       "C2_dependency_pinning",
       "C5_compliance_boundary_integrity",
+      "C6_mock_auth_or_fail_open_boundary",
       "R2R_D5_single_external_service_dependency",
       "S1_R2_unsupported_legal_or_compliance_claim"
     ],
@@ -493,7 +504,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:2:001",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -511,7 +522,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:2:002",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -529,7 +540,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:3:003",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -547,7 +558,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:3:004",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -565,7 +576,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:4:005",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -583,7 +594,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:4:006",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -601,7 +612,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:5:007",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -619,7 +630,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:5:008",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -637,7 +648,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:8:009",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -655,7 +666,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:10:010",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -673,7 +684,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:14:011",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -691,7 +702,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:16:012",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -709,7 +720,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:16:013",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -727,7 +738,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:18:014",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -745,7 +756,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:20:015",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -763,7 +774,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:22:016",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -781,7 +792,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:25:017",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -799,7 +810,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:26:018",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -817,7 +828,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:35:019",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -835,7 +846,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:38:020",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -853,7 +864,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:38:021",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -871,7 +882,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:44:022",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -889,7 +900,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:50:023",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -907,7 +918,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:68:024",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -925,7 +936,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:69:025",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -943,7 +954,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:165:026",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -961,7 +972,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:167:027",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -979,7 +990,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:216:028",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -997,7 +1008,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:218:029",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1015,7 +1026,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:222:030",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1033,7 +1044,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:227:031",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1051,7 +1062,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:228:032",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1069,7 +1080,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:243:033",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1087,7 +1098,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:260:034",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1105,7 +1116,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:279:035",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1123,7 +1134,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:279:036",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1141,7 +1152,7 @@
     {
       "finding_id": "S1_readme_bio_terms:README.md:296:037",
       "detector": "S1_readme_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1159,7 +1170,7 @@
     {
       "finding_id": "S1_clinical_boundary:.:0:001",
       "detector": "S1_clinical_boundary",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "clinical_boundary_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1174,7 +1185,7 @@
     {
       "finding_id": "S1_H1_clinical_certainty_hype:.:0:001",
       "detector": "S1_H1_clinical_certainty_hype",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "hype_clinical_certainty_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1189,7 +1200,7 @@
     {
       "finding_id": "S1_H2_regulatory_approval_hype:.:0:001",
       "detector": "S1_H2_regulatory_approval_hype",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "hype_regulatory_approval_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1204,7 +1215,7 @@
     {
       "finding_id": "S1_H3_autonomous_replacement_hype:.:0:001",
       "detector": "S1_H3_autonomous_replacement_hype",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "hype_autonomous_replacement_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1219,7 +1230,7 @@
     {
       "finding_id": "S1_H4_breakthrough_marketing_hype:.:0:001",
       "detector": "S1_H4_breakthrough_marketing_hype",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "hype_breakthrough_marketing_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1234,7 +1245,7 @@
     {
       "finding_id": "S1_H5_universal_generalization_hype:.:0:001",
       "detector": "S1_H5_universal_generalization_hype",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "hype_universal_generalization_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1249,7 +1260,7 @@
     {
       "finding_id": "S1_H6_perfect_accuracy_hype:.:0:001",
       "detector": "S1_H6_perfect_accuracy_hype",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "hype_perfect_accuracy_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1264,7 +1275,7 @@
     {
       "finding_id": "S1_R1_limitations_section:.:0:001",
       "detector": "S1_R1_limitations_section",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "limitations_section_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1279,7 +1290,7 @@
     {
       "finding_id": "S1_R2_regulatory_framework:.:0:001",
       "detector": "S1_R2_regulatory_framework",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "regulatory_framework_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1294,7 +1305,7 @@
     {
       "finding_id": "S1_R2_weak_regulatory_self_assertion:README.md:262:001",
       "detector": "S1_R2_weak_regulatory_self_assertion",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "weak_regulatory_self_assertion_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1312,7 +1323,7 @@
     {
       "finding_id": "S1_R2_unsupported_legal_or_compliance_claim:README.md:262:001",
       "detector": "S1_R2_unsupported_legal_or_compliance_claim",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "unsupported_legal_or_compliance_claim_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1331,7 +1342,7 @@
     {
       "finding_id": "S1_R4_demographic_bias_boundary:.:0:001",
       "detector": "S1_R4_demographic_bias_boundary",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "demographic_bias_boundary_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1346,7 +1357,7 @@
     {
       "finding_id": "S1_R5_reproducibility_provisions:.:0:001",
       "detector": "S1_R5_reproducibility_provisions",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "reproducibility_provisions_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1361,7 +1372,7 @@
     {
       "finding_id": "S3_T1_workflow_files:.:0:001",
       "detector": "S3_T1_workflow_files",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "workflow_presence_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1376,7 +1387,7 @@
     {
       "finding_id": "S3_T2_domain_tests:.:0:001",
       "detector": "S3_T2_domain_tests",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "domain_tests_bio_terms_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1391,7 +1402,7 @@
     {
       "finding_id": "S3_T3_changelog_release_hygiene:.:0:001",
       "detector": "S3_T3_changelog_release_hygiene",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "changelog_presence_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1406,7 +1417,7 @@
     {
       "finding_id": "S3_T3_changelog_bugfix_evidence:.:0:001",
       "detector": "S3_T3_changelog_bugfix_evidence",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "changelog_bugfix_terms_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1421,7 +1432,7 @@
     {
       "finding_id": "S3_B1_dependency_manifest:package-lock.json:0:001",
       "detector": "S3_B1_dependency_manifest",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "dependency_manifest_presence_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1436,7 +1447,7 @@
     {
       "finding_id": "S3_B1_dependency_manifest:package.json:0:001",
       "detector": "S3_B1_dependency_manifest",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "dependency_manifest_presence_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1451,7 +1462,7 @@
     {
       "finding_id": "S3_B1_dependency_manifest:pnpm-lock.yaml:0:001",
       "detector": "S3_B1_dependency_manifest",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "dependency_manifest_presence_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1466,7 +1477,7 @@
     {
       "finding_id": "S3_B1_data_source_language:README.md:22:001",
       "detector": "S3_B1_data_source_language",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "data_source_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1484,7 +1495,7 @@
     {
       "finding_id": "S3_B1_data_source_language:README.md:35:002",
       "detector": "S3_B1_data_source_language",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "data_source_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1502,7 +1513,7 @@
     {
       "finding_id": "S3_B2_bias_limitations:.:0:001",
       "detector": "S3_B2_bias_limitations",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bias_limitations_v2",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1517,7 +1528,7 @@
     {
       "finding_id": "S3_B2_measurement_evidence:.:0:001",
       "detector": "S3_B2_measurement_evidence",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bias_measurement_terms_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1532,7 +1543,7 @@
     {
       "finding_id": "S3_B3_coi_funding:README.md:281:001",
       "detector": "S3_B3_coi_funding",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "coi_funding_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1550,7 +1561,7 @@
     {
       "finding_id": "S2_package_bio_terms:package.json:2:001",
       "detector": "S2_package_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "package_bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1568,7 +1579,7 @@
     {
       "finding_id": "S2_package_bio_terms:package.json:5:002",
       "detector": "S2_package_bio_terms",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "package_bio_terms_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1586,7 +1597,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:.env.example:24:001",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1606,7 +1617,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:.env.example:38:002",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1626,7 +1637,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:README.md:23:001",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1645,7 +1656,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:README.md:60:002",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1664,7 +1675,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:README.md:61:003",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1683,7 +1694,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:README.md:48:004",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1706,7 +1717,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:README.md:50:005",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1729,7 +1740,7 @@
     {
       "finding_id": "R2R_D5_single_external_service_dependency:README.md:51:006",
       "detector": "R2R_D5_single_external_service_dependency",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "single_external_service_dependency_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1750,9 +1761,121 @@
       }
     },
     {
+      "finding_id": "C6_mock_auth_or_fail_open_boundary:README.md:51:001",
+      "detector": "C6_mock_auth_or_fail_open_boundary",
+      "detector_version": "1.7.8",
+      "pattern_id": "mock_auth_fail_open_boundary_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 51,
+      "snippet": "- **No authentication required** - Auto-login as dev user",
+      "match_type": "regex",
+      "explanation": "Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.",
+      "metadata": {
+        "match": "No authentication required",
+        "local_claim_context": true
+      }
+    },
+    {
+      "finding_id": "C6_mock_auth_or_fail_open_boundary:README.md:110:002",
+      "detector": "C6_mock_auth_or_fail_open_boundary",
+      "detector_version": "1.7.8",
+      "pattern_id": "mock_auth_fail_open_boundary_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 110,
+      "snippet": "You'll be automatically logged in as `dev@localhost` with full access to all features.",
+      "match_type": "regex",
+      "explanation": "Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.",
+      "metadata": {
+        "match": "dev@localhost",
+        "local_claim_context": true
+      }
+    },
+    {
+      "finding_id": "C6_mock_auth_or_fail_open_boundary:README.md:134:003",
+      "detector": "C6_mock_auth_or_fail_open_boundary",
+      "detector_version": "1.7.8",
+      "pattern_id": "mock_auth_fail_open_boundary_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 134,
+      "snippet": "2. **Mock Authentication**",
+      "match_type": "regex",
+      "explanation": "Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.",
+      "metadata": {
+        "match": "Mock Authentication",
+        "local_claim_context": true
+      }
+    },
+    {
+      "finding_id": "C6_mock_auth_or_fail_open_boundary:README.md:135:004",
+      "detector": "C6_mock_auth_or_fail_open_boundary",
+      "detector_version": "1.7.8",
+      "pattern_id": "mock_auth_fail_open_boundary_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": "README.md",
+      "line": 135,
+      "snippet": "- Auto-login as dev user (`dev@localhost`)",
+      "match_type": "regex",
+      "explanation": "Mock-auth, auto-login, or no-auth local/self-host boundary surfaced in reviewed sources.",
+      "metadata": {
+        "match": "Auto-login",
+        "local_claim_context": true
+      }
+    },
+    {
+      "finding_id": "C6_mock_auth_or_fail_open_boundary:.env.example:11:001",
+      "detector": "C6_mock_auth_or_fail_open_boundary",
+      "detector_version": "1.7.8",
+      "pattern_id": "mock_auth_fail_open_boundary_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": ".env.example",
+      "line": 11,
+      "snippet": "# Set to 'self-hosted' or 'valyu'",
+      "match_type": "regex",
+      "explanation": "Local or self-host claims coexist with mock-auth or auto-login boundary signals.",
+      "metadata": {
+        "line_role": "local_or_self_host_claim"
+      }
+    },
+    {
+      "finding_id": "C6_mock_auth_or_fail_open_boundary:.env.example:12:002",
+      "detector": "C6_mock_auth_or_fail_open_boundary",
+      "detector_version": "1.7.8",
+      "pattern_id": "mock_auth_fail_open_boundary_v1",
+      "status": "detected",
+      "evidence_status": "confirmed_present",
+      "confidence": "high",
+      "severity": "warn",
+      "file": ".env.example",
+      "line": 12,
+      "snippet": "# self-hosted = no auth, local SQLite, unlimited queries, Ollama/LM Studio support",
+      "match_type": "regex",
+      "explanation": "Local or self-host claims coexist with mock-auth or auto-login boundary signals.",
+      "metadata": {
+        "line_role": "local_or_self_host_claim"
+      }
+    },
+    {
       "finding_id": "C1_hardcoded_credentials:.:0:001",
       "detector": "C1_hardcoded_credentials",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "credential_pattern_v2",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1767,7 +1890,7 @@
     {
       "finding_id": "C2_dependency_pinning:.:0:001",
       "detector": "C2_dependency_pinning",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "loose_dependency_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1782,7 +1905,7 @@
     {
       "finding_id": "C3_dead_or_deprecated_patient_adjacent_paths:.:0:001",
       "detector": "C3_dead_or_deprecated_patient_adjacent_paths",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "deprecated_patient_metadata_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1797,7 +1920,7 @@
     {
       "finding_id": "C4_exception_handling_clinical_adjacent_paths:.:0:001",
       "detector": "C4_exception_handling_clinical_adjacent_paths",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "fail_open_exception_v2",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1812,7 +1935,7 @@
     {
       "finding_id": "BIO_smiles_surface_integrity:.:0:001",
       "detector": "BIO_smiles_surface_integrity",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_smiles_surface_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1827,17 +1950,17 @@
     {
       "finding_id": "BIO_smiles_rdkit_validation:.:0:001",
       "detector": "BIO_smiles_rdkit_validation",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_smiles_rdkit_invalid_v1",
-      "status": "not_applicable",
-      "evidence_status": "not_applicable",
-      "confidence": "high",
+      "status": "not_detected",
+      "evidence_status": "not_found_in_reviewed_sources",
+      "confidence": "medium",
       "severity": "info",
       "file": ".",
       "line": 0,
       "snippet": "",
       "match_type": "ast",
-      "explanation": "RDKit optional validation lane unavailable in current environment.",
+      "explanation": "RDKit optional validation lane not exercised because no SMILES-like candidates were detected.",
       "metadata": {
         "lane": "A1_optional_rdkit"
       }
@@ -1845,7 +1968,7 @@
     {
       "finding_id": "BIO_smiles_parser_guard:.:0:001",
       "detector": "BIO_smiles_parser_guard",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_smiles_parser_guard_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1860,7 +1983,7 @@
     {
       "finding_id": "BIO_silent_mock_fallback:.:0:001",
       "detector": "BIO_silent_mock_fallback",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_silent_mock_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1875,7 +1998,7 @@
     {
       "finding_id": "BIO_trace_manifest:.:0:001",
       "detector": "BIO_trace_manifest",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_trace_manifest_file_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1890,7 +2013,7 @@
     {
       "finding_id": "BIO_run_trace:.:0:001",
       "detector": "BIO_run_trace",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "bio_run_trace_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -1905,7 +2028,7 @@
     {
       "finding_id": "S4_container_environment:Dockerfile:0:001",
       "detector": "S4_container_environment",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "container_file_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1920,7 +2043,7 @@
     {
       "finding_id": "S4_make_reproduce_target:.:0:001",
       "detector": "S4_make_reproduce_target",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "make_reproduce_target_v1",
       "status": "absent",
       "evidence_status": "confirmed_missing",
@@ -1935,7 +2058,7 @@
     {
       "finding_id": "S4_environment_lock_evidence:package-lock.json:0:001",
       "detector": "S4_environment_lock_evidence",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "environment_lock_file_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1950,7 +2073,7 @@
     {
       "finding_id": "S4_environment_lock_evidence:pnpm-lock.yaml:0:001",
       "detector": "S4_environment_lock_evidence",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "environment_lock_file_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1965,7 +2088,7 @@
     {
       "finding_id": "S4_exact_dependency_pins_or_hashes:package-lock.json:0:001",
       "detector": "S4_exact_dependency_pins_or_hashes",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "exact_pin_or_hash_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1980,7 +2103,7 @@
     {
       "finding_id": "S4_exact_dependency_pins_or_hashes:pnpm-lock.yaml:0:001",
       "detector": "S4_exact_dependency_pins_or_hashes",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "exact_pin_or_hash_v1",
       "status": "detected",
       "evidence_status": "confirmed_present",
@@ -1995,7 +2118,7 @@
     {
       "finding_id": "S4_readme_reproducibility_section:.:0:001",
       "detector": "S4_readme_reproducibility_section",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "readme_repro_heading_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2010,7 +2133,7 @@
     {
       "finding_id": "S4_checksum_files:.:0:001",
       "detector": "S4_checksum_files",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "checksum_file_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2025,7 +2148,7 @@
     {
       "finding_id": "S4_dataset_url:.:0:001",
       "detector": "S4_dataset_url",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "dataset_url_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2040,7 +2163,7 @@
     {
       "finding_id": "S4_model_weight_url_or_checksum:.:0:001",
       "detector": "S4_model_weight_url_or_checksum",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "model_weight_url_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2055,7 +2178,7 @@
     {
       "finding_id": "S4_citation_cff:.:0:001",
       "detector": "S4_citation_cff",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "citation_cff_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2070,7 +2193,7 @@
     {
       "finding_id": "S4_license_restriction:.:0:001",
       "detector": "S4_license_restriction",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "license_restriction_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2085,7 +2208,7 @@
     {
       "finding_id": "S4_cli_entrypoint:.:0:001",
       "detector": "S4_cli_entrypoint",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "cli_entrypoint_v1",
       "status": "absent",
       "evidence_status": "confirmed_missing",
@@ -2100,7 +2223,7 @@
     {
       "finding_id": "S4_seed_setting:.:0:001",
       "detector": "S4_seed_setting",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "ast_seed_setting_stage4_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2115,7 +2238,7 @@
     {
       "finding_id": "S4_runnable_examples:.:0:001",
       "detector": "S4_runnable_examples",
-      "detector_version": "1.7.7",
+      "detector_version": "1.7.8",
       "pattern_id": "runnable_example_file_v1",
       "status": "not_detected",
       "evidence_status": "not_found_in_reviewed_sources",
@@ -2129,11 +2252,10 @@
     }
   ],
   "detector_summary": {
-    "total_findings": 97,
+    "total_findings": 103,
     "by_status": {
-      "detected": 60,
-      "not_detected": 34,
-      "not_applicable": 1,
+      "detected": 66,
+      "not_detected": 35,
       "absent": 2
     },
     "by_detector": {
@@ -2212,6 +2334,9 @@
       "R2R_D5_single_external_service_dependency": {
         "detected": 8
       },
+      "C6_mock_auth_or_fail_open_boundary": {
+        "detected": 6
+      },
       "C1_hardcoded_credentials": {
         "not_detected": 1
       },
@@ -2228,7 +2353,7 @@
         "not_detected": 1
       },
       "BIO_smiles_rdkit_validation": {
-        "not_applicable": 1
+        "not_detected": 1
       },
       "BIO_smiles_parser_guard": {
         "not_detected": 1
@@ -2311,7 +2436,8 @@
     "Legal, privacy, or compliance claim appears without supporting governance or security-grounding evidence in reviewed repository sources.",
     "Core workflow appears materially dependent on named external service providers; local or self-host claims may overstate operational independence.",
     "C2_dependency_pinning: WARN",
-    "C5_compliance_boundary_integrity: WARN"
+    "C5_compliance_boundary_integrity: WARN",
+    "C6_mock_auth_or_fail_open_boundary: WARN"
   ],
   "file_hashes_sha256": {
     "README.md": "199862D708D85AF0B126FD4129E5F134D6E9E804F6F8249F940F3DA16DC190AA"
@@ -2333,6 +2459,7 @@
     "C2": "Dependency-manifest-only pin check across requirements/environment/setup.cfg/pyproject dependency sections; ignores non-dependency metadata lines",
     "C3": "Patient metadata patterns in deprecated/legacy/archive directories (regex)",
     "C4": "AST-backed detection of executable fail-open Python exception handlers (except/pass or except/return True)",
+    "C6": "Mock-auth, auto-login, or no-auth local/self-host boundary signals surfaced from README/docs/config/code review",
     "CC1": "AST scan for public functions with confidence/threshold parameter defaulting to 0 or 0.0.",
     "CC2": "README code-block import names compared against package __all__; flags names claimed as importable but absent.",
     "CC3": "AST scan for validate_*/check_* functions using len() but no re.match/search structure check.",
@@ -2345,16 +2472,16 @@
     "policy_schema_version": "1",
     "policy_version": "ca-policy-1.0",
     "tool_version_introduced": "1.6.5",
-    "tool_version_last_validated": "1.7.7",
+    "tool_version_last_validated": "1.7.8",
     "profile_name": "default",
     "profile_status": "authoritative_release",
     "profile_read_mode": "mirror_only",
-    "policy_sha256": "60fc10d6f80496cdae88822456f70bd135c2b7e22276ccd69fe86621a178dab4"
+    "policy_sha256": "3157a819a388f48d8649f1f595a2e4d513f43b5419d89ba2ee6536da0e050d91"
   },
   "audit_freshness": {
     "review_after_days": 45,
     "freshness_basis": "clinical_adjacent_short_cycle",
-    "expires_on": "2026-06-30",
+    "expires_on": "2026-07-02",
     "expired": false,
     "anchored_commit": "100a0bf7497e62ead024df34d8c2e00ae74b8d99",
     "hashes_available_for": [
@@ -2616,9 +2743,9 @@
     "evidence_budget": {
       "confidence": 0.48,
       "required_bits": 0.9434,
-      "observed_bits": 8.6439,
-      "unique_token_count": 399,
-      "deficit": -7.7004,
+      "observed_bits": 8.7142,
+      "unique_token_count": 419,
+      "deficit": -7.7708,
       "budget_deficit_max": 1.0,
       "flagged": false,
       "status": "supported",
@@ -2626,10 +2753,10 @@
     },
     "confidence_envelope": {
       "confidence": 0.48,
-      "evidence_count": 97,
-      "lower": 0.4295,
-      "upper": 0.5305,
-      "margin": 0.0505,
+      "evidence_count": 103,
+      "lower": 0.431,
+      "upper": 0.529,
+      "margin": 0.049,
       "basis": "diagnostic_only_uncalibrated_initial_prior"
     },
     "lane_coherence": {
